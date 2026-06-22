@@ -1,0 +1,17 @@
+h1 {
+    background: rgb(255, 166, 0);
+    padding: 30px;
+    text-align: center;
+}
+
+p {
+    margin: 20px;
+    font-size: 20px;
+}
+
+ul { 
+    margin: 0 15px 20px 15px;
+    background: rgb(175, 172, 172, 0.50);
+    padding: 15px;
+    border-radius: 10px;
+}
