@@ -1,0 +1,31 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 35px;
+    background-color: var(--cor-principal);
+    box-shadow: var(--sombra);
+    font-family: arial;
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    text-decoration: none;
+    padding: 10px;
+    background-color: rgb(206, 200, 200);
+    border-radius: 10px;
+    color: rgb(97, 80, 26);
+}
+
+.pagina-ativa {
+    border-bottom: 2px solid rgb(85, 83, 83);
+    transition: .2s black;
+}
+
+.pagina-ativa:hover {
+    background-color: rgb(68, 67, 67, 0.5);
+}

@@ -1,0 +1,58 @@
+main {
+    flex: 1;
+    font-family: var(--fonte);
+}
+
+h2 {
+    margin: 40px 30px;
+    text-align: center;
+    font-size: 35px;
+}
+
+.sobre-mim {
+    margin: 30px 0;
+}
+
+.sobre-mim ul {
+    padding: 10px;
+    margin: 0 40px 0 40px;
+    background-color: var(--cor-principal);
+    border-radius: 10px;
+}
+
+.sobre-mim ul li {
+    font-size: 20px;
+    margin: 0 0 0 40px;
+    margin-bottom: 10px;
+}
+
+.hobies {
+    margin: 30px 0;
+}
+
+.hobbies ul {
+    background-color: var(--cor-principal);
+    padding: 10px;
+    margin: 0 40px 0 40px;
+    border-radius: 10px;
+}
+
+.hobbies ul li {
+    font-size: 20px;
+    margin: 0 0 0 40px;
+    margin-bottom: 10px;
+}
+
+.redes {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.redes-socias {
+    margin: 40px 0;
+    padding: 30px;
+    background: var(--cor-principal);
+    border-radius: 10px;
+}

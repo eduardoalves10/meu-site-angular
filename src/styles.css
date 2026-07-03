@@ -3,3 +3,10 @@
     margin: 0;
     padding: 0;
 }
+
+:root {
+    --cor-principal: rgb(238, 233, 233);
+    --cor-secundaria: rgb(0, 0, 0);
+    --sombra: 0 0 25px rgb(0, 0, 0, 0.35);
+    --fonte: arial;
+}
