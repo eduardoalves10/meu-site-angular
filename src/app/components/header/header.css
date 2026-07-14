@@ -5,7 +5,12 @@ header {
     padding: 35px;
     background-color: var(--cor-principal);
     box-shadow: var(--sombra);
-    font-family: arial;
+    font-family: var(--fonte);
+    border-bottom: 2px solid rgb(85, 83, 83);
+}
+
+h1 {
+    color: var(--cor-importante);
 }
 
 nav {

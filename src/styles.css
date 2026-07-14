@@ -5,8 +5,9 @@
 }
 
 :root {
-    --cor-principal: rgb(238, 233, 233);
-    --cor-secundaria: rgb(0, 0, 0);
+    --cor-principal: rgba(238, 233, 233);
+    --cor-secundaria: rgba(0, 0, 0);
+    --cor-importante: rgba(65, 61, 61);
     --sombra: 0 0 25px rgb(0, 0, 0, 0.35);
     --fonte: arial;
 }

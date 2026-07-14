@@ -1,28 +1,32 @@
 main {
     flex: 1;
+    font-size: 20px;
     font-family: var(--fonte);
+    line-height: 1.5;
 }
 
 h2 {
-    margin: 40px 30px;
+    color: rgba(65, 61, 61);
+    margin: 40px;
     text-align: center;
     font-size: 35px;
+    border-bottom: 1px solid rgb(85, 83, 83);
 }
 
-.sobre-mim {
-    margin: 30px 0;
+.cards {
+    display: flex;
+    justify-content: center;
 }
 
-.sobre-mim ul {
-    padding: 10px;
-    margin: 0 40px 0 40px;
+.texto {
+    padding: 40px;
     background-color: var(--cor-principal);
     border-radius: 10px;
+    margin: 0 50px;
+    box-shadow: var(--sombra);
 }
 
-.sobre-mim ul li {
-    font-size: 20px;
-    margin: 0 0 0 40px;
+.texto p {
     margin-bottom: 10px;
 }
 
@@ -38,12 +42,11 @@ h2 {
 }
 
 .hobbies ul li {
-    font-size: 20px;
     margin: 0 0 0 40px;
     margin-bottom: 10px;
 }
 
-.redes {
+.links {
     display: flex;
     justify-content: center;
     gap: 30px;
@@ -51,8 +54,18 @@ h2 {
 }
 
 .redes-socias {
-    margin: 40px 0;
+    margin: 10px 0 50px;
     padding: 30px;
     background: var(--cor-principal);
     border-radius: 10px;
+    box-shadow: var(--sombra);
+}
+
+.redes-socias a {
+    text-decoration: none;
+}
+
+.redes-socias i {
+    font-size: 35px;
+    color: var(--cor-importante);
 }
