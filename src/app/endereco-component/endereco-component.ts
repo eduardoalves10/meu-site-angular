@@ -1,13 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { Endereco } from './endereco';
 
 @Component({
   selector: 'app-endereco-component',
   imports: [],
   templateUrl: './endereco-component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './endereco-component.css',
 })
-
 export class EnderecoComponent {
   senai: Endereco = {
     cep: '89030000',
@@ -15,6 +15,6 @@ export class EnderecoComponent {
     cidade: 'Blumenau',
     bairro: 'Victor Konder',
     rua: 'São Paulo',
-    numero: '10'
+    numero: '10',
   };
-};
+}

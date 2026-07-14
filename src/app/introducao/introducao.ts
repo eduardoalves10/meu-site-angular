@@ -1,14 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'app-introducao',
   imports: [],
   templateUrl: './introducao.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './introducao.css',
 })
 export class Introducao {
   nome: string = 'Eduardo';
-  idade: Number= 17;
-  cidade: string= 'Blumenau';
-  curso: string= 'Front-end';
+  idade: Number = 17;
+  cidade: string = 'Blumenau';
+  curso: string = 'Front-end';
 }
