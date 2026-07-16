@@ -1,0 +1,15 @@
+button {
+    margin: 30px;
+    padding: 8px 16px;
+    border-radius: 10px;
+    background-color: var(--cor-principal);
+    font-weight: bold;
+}
+
+.habilitado {
+    border: 2px solid green;
+}
+
+.nao-habilitado {
+    border: 2px solid red;
+}

@@ -15,13 +15,6 @@ import { Footer } from './components/footer/footer';
   selector: 'app-root',
   imports: [
     RouterOutlet,
-    MeuComponente,
-    MeuComponente2,
-    Valores,
-    Introducao,
-    EnderecoComponent,
-    PessoaComponent,
-    MercadoComponent,
     Header,
     Main,
     Footer,
@@ -31,5 +24,5 @@ import { Footer } from './components/footer/footer';
   styleUrl: './app.css',
 })
 export class App {
-  protected readonly title = signal('galera');
+  protected readonly title = signal('Oi');
 }
