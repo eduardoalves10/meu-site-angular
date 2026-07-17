@@ -1,6 +1,84 @@
-<section>
+<section class="input-texto">
     <h2>Input:</h2>
 
-    <input [(ngModel)]="texto">
+    <input (input)="aoDigitar()" [(ngModel)]="texto">
     <p>{{texto}}</p>
+
+</section>
+
+<section class="input-nome">
+    <h2>Digite seu nome:</h2>
+
+    <input [(ngModel)]="nome">
+
+    <p>Seja bem-vindo
+    @if (nome == "Eduardo") {
+      <strong>{{nome}}</strong>! Aluno do Entra21
+        <img class="fotos" src="/imagens/Eduardo.jpeg" alt="">
+    } @else if (nome == "Jordan") {
+        <strong>{{nome}}</strong>! Aluno do Entra21
+        <img class="fotos" src="/imagens/Jordan.jpeg" alt="Jordan"
+        width="180"
+        height="180"
+        loading="lazy">
+    } @else if (nome == "Gregory") {
+        <strong>{{nome}}</strong>! Aluno do Entra21
+        <img class="fotos" src="/imagens/Gregory.jpeg" alt="Gregory"
+        width="180"
+        height="180"
+        loading="lazy">
+    } @else if (nome == "Rafael") {
+        <strong>{{nome}}</strong>! Aluno do Entra21
+        <img class="fotos" src="/imagens/Rafael.jpeg" alt="Rafael"
+        width="180"
+        height="180"
+        loading="lazy">
+    } @else if (nome == "Benjamim") {
+        <strong>{{nome}}</strong>! Aluno do Entra21
+        <img class="fotos" src="/imagens/Benjamim.jpeg" alt="Benjamim"
+        width="180"
+        height="180"
+        loading="lazy">
+    } @else if (nome == "Emerson") {
+        <strong>{{nome}}</strong>! Aluno do Entra21
+        <img class="fotos" src="/imagens/Emerson.jpeg" alt="Emerson"
+        width="180"
+        height="180"
+        loading="lazy">
+    } @else if (nome == "Nathan") {
+        <strong>{{nome}}</strong>! Aluno do Entra21
+        <img class="fotos" src="/imagens/Nathan.jpeg" alt="Nathan"
+        width="180"
+        height="180"
+        loading="lazy">
+    } @else if (nome == "Arthur") {
+        <strong>{{nome}}</strong>! Aluno do Entra21
+        <img class="fotos" src="/imagens/Arthur.jpeg" alt="Arthur"
+        width="180"
+        height="180"
+        loading="lazy">
+    } @else if (nome == "Henrique") {
+        <strong>{{nome}}</strong>! Professor do Entra21
+    } @else if (nome == "Karize") {
+        <strong>{{nome}}</strong>! Professora do Entra21
+    } @else {
+        <strong>{{nome}}</strong>! Pessoa desconhecida!
+    }
+    </p>
+</section>
+
+<section class="input-nota">
+    <h2>Digite a sua nota:</h2>
+
+    <input [(ngModel)]="nota">
+
+    <p><strong>Você foi:</strong> 
+    @if (nota == 10) {
+        Aprovado com a nota máxima {{nota}}! Parabéns pelo esforço e pelo ano incrível!!!
+    } @else if (nota >= 9) {
+        Aprovado! Excelente nota {{nota}}! Parabéns!!!
+    } @else if (nota >= 6) {
+        Aprovado! 
+    } @else {Reprovado!}
+    </p>
 </section>

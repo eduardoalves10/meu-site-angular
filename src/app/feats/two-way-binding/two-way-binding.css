@@ -10,3 +10,19 @@ p {
     margin: 0 0 30px 30px;
     font-family: var(--fonte);
 }
+
+img {
+    margin: 20px 0 20px 0;
+    display: flex;
+    justify-content: flex-end;
+    object-fit: cover;
+    max-width: 100%;
+    height:auto;
+    border-radius: 10px;
+    border: solid 3px var(--cor-importante);
+}
+
+.fotos {
+    width: 250px;
+    height: 250px;
+}

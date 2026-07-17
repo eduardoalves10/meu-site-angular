@@ -1,0 +1,26 @@
+button {
+    margin: 30px;
+    padding: 8px 16px;
+    border-radius: 10px;
+    background-color: var(--cor-principal);
+    border: 1px solid var(--cor-principal);
+}
+
+.botao-adiciona {
+    transition: .5s;
+}
+
+.botao-adiciona:hover {
+    transform: scale(1.04);
+    background-color: rgba(167, 164, 164);
+}
+
+.contador-e-botao {
+    display: flex;
+    justify-content: space-around;
+    gap: 30px;
+}
+
+p {
+    padding: 10px;
+}

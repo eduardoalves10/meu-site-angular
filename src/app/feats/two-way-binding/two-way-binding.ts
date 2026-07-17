@@ -8,5 +8,15 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './two-way-binding.css',
 })
 export class TwoWayBinding {
+
   texto: string= '';
-;}
+
+  aoDigitar() {
+    console.log("O usuário digitou")
+  };
+
+  nome: string= "";
+
+  nota: number=0;
+
+};
