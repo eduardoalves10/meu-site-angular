@@ -1,0 +1,23 @@
+.usuario {
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    margin: 30px;
+    background-color: var(--cor-principal);
+    padding: 8px 16px;
+    border: 1px solid var(--cor-principal);
+    border-radius: 10px;
+    box-shadow: var(--sombra);
+}
+
+.usuario-deslogado {
+    background-color: rgba(255, 0, 0);
+    color: rgba(255, 255, 255); 
+}
+
+.usuario-logado {
+    background-color: rgba(0, 128, 0);
+    color: rgba(255, 255, 255);
+}

@@ -4,6 +4,7 @@ button {
     border-radius: 10px;
     background-color: var(--cor-principal);
     border: 1px solid var(--cor-principal);
+    box-shadow: var(--sombra);
 }
 
 .botao-adiciona {
@@ -15,12 +16,13 @@ button {
     background-color: rgba(167, 164, 164);
 }
 
-.contador-e-botao {
-    display: flex;
-    justify-content: space-around;
-    gap: 30px;
+.botao-zera {
+    border: 2px solid var(--cor-secundaria);
 }
 
-p {
-    padding: 10px;
+.contador-e-botao {
+    margin: 20px;
+    display: flex;
+    justify-content: left;
+    gap: 5px;
 }

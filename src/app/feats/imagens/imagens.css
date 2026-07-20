@@ -1,0 +1,33 @@
+.fundo-da-tela {
+    background-color: var(--cor-principal);
+    margin: 50px;
+    padding: 10px;
+    border-radius: 50px;
+}
+input {
+    color: white;
+    padding: 7px;
+    border-radius: 10px;
+    background-color: var(--cor-importante);
+    border: 1px solid var(--cor-importante);
+    margin: 30px auto;
+    box-shadow: var(--sombra);
+    width: 50%;
+}
+
+.imagens-links {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+
+img {
+    border-radius: 10px;
+    margin: 10px auto 50px;
+    object-fit: cover;
+    width: 300px;
+    height: 300px;
+    border: 3px solid var(--cor-importante);
+    box-shadow: var(--sombra);
+}

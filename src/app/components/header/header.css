@@ -19,6 +19,7 @@ nav {
 }
 
 nav a {
+    text-align: center;
     text-decoration: none;
     padding: 10px;
     background-color: rgb(206, 200, 200);
@@ -34,3 +35,22 @@ nav a {
 .pagina-ativa:hover {
     background-color: rgb(68, 67, 67, 0.5);
 }
+
+@media (max-width:990px) {
+
+    header {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    nav {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+};
