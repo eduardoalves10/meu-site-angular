@@ -8,13 +8,22 @@ import { Component } from '@angular/core';
 })
 export class BotaoContador {
 
-  contador: number=0;
+  protected contador: number= 0;
 
-  adicionarMaisUm() {
-    this.contador ++
-  }
+  protected limiteImposto = 10;
 
-  resetContador () {
-    this.contador= 0
-  }
-}
+  protected adicionarMaisUm() {
+    this.contador ++;
+    this. checarValor();
+  };
+
+  protected checarValor() {
+    if (this.contador > this.limiteImposto) {
+      this.contador = 0;
+    };
+  };
+
+  protected resetContador () {
+    this.contador= 0;
+  };
+};

@@ -7,6 +7,7 @@ import { Alunos } from './feats/alunos/alunos';
 import { BotaoContador } from './feats/botao-contador/botao-contador';
 import { LogadoDeslogado } from './feats/logado-deslogado/logado-deslogado';
 import { Imagens } from './feats/imagens/imagens';
+import { ExemploSignal } from './feats/exemplo-signal/exemplo-signal';
 
 export const routes: Routes = [
 
@@ -18,6 +19,7 @@ export const routes: Routes = [
     {path: 'botao-contador', component: BotaoContador},
     {path: 'logado-deslogado', component: LogadoDeslogado},
     {path: 'imagens', component: Imagens},
+    {path: 'exemplo-signal', component: ExemploSignal},
     {path: '', redirectTo: 'home', pathMatch: 'full'}
 
 ];

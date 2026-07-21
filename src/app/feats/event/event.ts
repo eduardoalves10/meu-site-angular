@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
   styleUrl: './event.css',
 })
 export class Event {
-  clicarNoBotao() {
+  protected clicarNoBotao() {
     alert('O botão foi clicado')
-  }
-}
+  };
+};

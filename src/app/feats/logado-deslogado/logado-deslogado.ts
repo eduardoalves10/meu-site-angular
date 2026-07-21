@@ -8,12 +8,12 @@ import { Component } from '@angular/core';
 })
 export class LogadoDeslogado {
 
-  EstadoLogin="deslogado"
+  protected EstadoLogin="deslogado"
 
-  logar(){
+  protected logar(){
     this.EstadoLogin="logado"
   }
-  deslogar(){
+  protected deslogar(){
     this.EstadoLogin="deslogado"
   }
   

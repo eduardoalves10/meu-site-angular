@@ -9,14 +9,14 @@ import { FormsModule } from '@angular/forms';
 })
 export class TwoWayBinding {
 
-  texto: string= '';
+  protected texto: string= '';
 
-  aoDigitar() {
+  protected aoDigitar() {
     console.log("O usuário digitou")
   };
 
-  nome: string= "";
+  protected nome: string= "";
 
-  nota: number=0;
+  protected nota: number=0;
 
 };

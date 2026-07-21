@@ -8,5 +8,5 @@ import { FormsModule } from "@angular/forms";
   styleUrl: './imagens.css',
 })
 export class Imagens {
-  img: string="";
-}
+  protected img: string="";
+};

@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrl: './lista-alunos.css',
 })
 export class ListaAlunos {
-  alunos= ['Eduardo', 'Rafael', 'Jordan', 'Gregory', 'Nathan', 'Arthur', 'Benjamim', 'Emerson', 'Henrique']
+  protected alunos= ['Eduardo', 'Rafael', 'Jordan', 'Gregory', 'Nathan', 'Arthur', 'Benjamim', 'Emerson', 'Henrique']
 }
