@@ -1,0 +1,22 @@
+p {
+    margin: 30px;
+    font-size: 20px;
+    font-family: var(--fonte);
+}
+
+button {
+    margin: 30px 0 50px 30px;
+    padding: 8px 16px;
+    background-color: var(--cor-principal);
+    border: 1px solid var(--cor-principal);
+    border-radius: 10px;
+    transition: .5s;
+    box-shadow: var(--sombra);
+}
+
+button:hover {
+    transform: scale(1.04);
+    background-color: rgba(167, 164, 164);
+    border: 1px solid rgba(167, 164, 164);
+    font-weight: bold;
+}

@@ -1,7 +1,7 @@
 <section class="situacao-de-usuario">
-    <h2>O usuário está <strong>{{EstadoLogin}}</strong></h2>
+    <h2>O usuário está <strong>{{EstadoLogin()}}</strong></h2>
     <div class="usuario">
-        @if (EstadoLogin === "logado") {
+        @if (EstadoLogin() === "logado") {
         <button class="usuario-deslogado" (click)="deslogar()">Deslogar</button>
         }
         @else {

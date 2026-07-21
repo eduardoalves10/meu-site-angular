@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 
 @Component({
   selector: 'app-logado-deslogado',
@@ -8,13 +8,13 @@ import { Component } from '@angular/core';
 })
 export class LogadoDeslogado {
 
-  protected EstadoLogin="deslogado"
+  protected EstadoLogin= signal("deslogado");
 
   protected logar(){
-    this.EstadoLogin="logado"
-  }
+    this.EstadoLogin.set("logado");
+  };
   protected deslogar(){
-    this.EstadoLogin="deslogado"
-  }
+    this.EstadoLogin.set("deslogado");
+  };
   
-}
+};

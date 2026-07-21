@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Signal, signal } from '@angular/core';
 
 @Component({
   selector: 'app-botao-contador',
@@ -8,22 +8,22 @@ import { Component } from '@angular/core';
 })
 export class BotaoContador {
 
-  protected contador: number= 0;
+  protected contador= signal <number>(0);
 
-  protected limiteImposto = 10;
+  protected limiteImposto = signal(15);
 
   protected adicionarMaisUm() {
-    this.contador ++;
+    this.contador.update(valorAtual => valorAtual +1);
     this. checarValor();
   };
 
   protected checarValor() {
-    if (this.contador > this.limiteImposto) {
-      this.contador = 0;
+    if (this.contador() > this.limiteImposto()) {
+      this.contador.set(0);
     };
   };
 
   protected resetContador () {
-    this.contador= 0;
+    this.contador.set(0);
   };
 };

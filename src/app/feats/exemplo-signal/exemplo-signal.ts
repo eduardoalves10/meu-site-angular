@@ -10,4 +10,8 @@ export class ExemploSignal {
 
   idade = signal(17);
 
+  mudarValor() {
+    this.idade.set(18);
+  }
+
 };
