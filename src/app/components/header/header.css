@@ -7,15 +7,19 @@ header {
     box-shadow: var(--sombra);
     font-family: var(--fonte);
     border-bottom: 2px solid rgb(85, 83, 83);
+    gap: 40px;
 }
 
 h1 {
     color: var(--cor-importante);
+    text-align: center;
 }
 
 nav {
     display: flex;
     gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 nav a {
@@ -36,11 +40,10 @@ nav a {
     background-color: rgb(68, 67, 67, 0.5);
 }
 
-@media (max-width:990px) {
-
+@media (max-width: 820px) {
     header {
         display: flex;
-        flex-direction: column;
+        flex-direction:column; 
         gap: 30px;
     }
 
@@ -50,7 +53,8 @@ nav a {
 
     nav {
         display: flex;
-        flex-direction: column;
+        justify-content: center;
         gap: 10px;
+        flex-wrap: wrap;
     }
 };
