@@ -8,7 +8,7 @@ import { Component, signal } from '@angular/core';
 })
 export class LogadoDeslogado {
 
-  protected EstadoLogin= signal("deslogado");
+  protected EstadoLogin= signal<string>("deslogado");
 
   protected logar(){
     this.EstadoLogin.set("logado");
