@@ -18,5 +18,8 @@ button:hover {
     transform: scale(1.04);
     background-color: rgba(167, 164, 164);
     border: 1px solid rgba(167, 164, 164);
-    font-weight: bold;
+}
+
+.adicionar-1-ano:hover{
+    background-color: rgba(0, 128, 0);
 }

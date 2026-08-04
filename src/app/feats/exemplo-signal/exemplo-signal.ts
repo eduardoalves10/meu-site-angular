@@ -8,10 +8,14 @@ import { Component, signal } from '@angular/core';
 })
 export class ExemploSignal {
 
-  idade = signal(17);
+  protected idade = signal(17);
 
-  mudarValor() {
+  protected mudarValor() {
     this.idade.set(18);
-  }
+  };
+
+  protected incrementarIdade () {
+    this.idade.update(current => current + 1);
+  };
 
 };
