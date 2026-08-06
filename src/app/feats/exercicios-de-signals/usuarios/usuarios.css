@@ -18,7 +18,7 @@ ul li {
 
 .user {
     border-radius: 10px;
-    background-color: var(--cor-principal);
+    background-color: #e9edf0;
     box-shadow: var(--sombra);
     padding: 30px;
     margin: 20px;
