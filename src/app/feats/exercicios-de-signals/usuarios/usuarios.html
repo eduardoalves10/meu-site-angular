@@ -1,11 +1,13 @@
 <section class="usuarios">
     <h2>Usuários cadastrados:</h2>
 
-    @for (usuario of usuarios(); track usuario.id) {
-        <ul>
-            <li>ID de usuário: <strong>{{usuario.id}}</strong>;</li>
-            <li>Nome: <strong>{{usuario.nome}}</strong>;</li>
-            <li>Idade: <strong>{{usuario.idade}} anos</strong>.</li>
-        </ul>
-    }
+    <div class="users">
+        @for (usuario of usuarios(); track usuario.id) {
+            <div class="user">
+                <p>ID de usuário: <strong>{{usuario.id}}</strong>;</p>
+                <p>Nome: <strong>{{usuario.nome}}</strong>;</p>
+                <p>Idade: <strong>{{usuario.idade}} anos</strong>.</p>
+            </div>
+        }
+    </div>
 </section>
