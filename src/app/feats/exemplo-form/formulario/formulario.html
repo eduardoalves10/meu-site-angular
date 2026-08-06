@@ -1,0 +1,18 @@
+<section class="formulario">
+    <h2>Cadastre seu produto:</h2>
+
+    <form (submit)="cadastrarProduto($event)">
+
+        <!-- Titulo -->
+        <input type="text" placeholder="Título" [formField]="produtoForm.titulo">
+
+        <!-- Descrição -->
+        <input type="text" placeholder="Descrição" [formField]="produtoForm.descricao">
+
+        <!-- Preço  -->
+        <input type="text" placeholder="Preço" inputmode="numeric" [formField]="produtoForm.preco">
+
+        <button>Cadastrar produto</button>
+
+    </form>
+</section>

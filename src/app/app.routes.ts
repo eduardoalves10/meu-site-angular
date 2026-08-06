@@ -9,6 +9,7 @@ import { LogadoDeslogado } from './feats/exercício-6-até-o-8/logado-deslogado/
 import { Imagens } from './feats/exercício-6-até-o-8/imagens/imagens';
 import { ExemploSignal } from './feats/exemplo-signal/exemplo-signal';
 import { Usuarios } from './feats/exercicios-de-signals/usuarios/usuarios';
+import { Formulario } from './feats/exemplo-form/formulario/formulario';
 
 export const routes: Routes = [
 
@@ -22,6 +23,7 @@ export const routes: Routes = [
     {path: 'imagens', component: Imagens},
     {path: 'exemplo-signal', component: ExemploSignal},
     {path: 'usuarios', component: Usuarios},
+    {path: 'formulario', component: Formulario},
     {path: '', redirectTo: 'home', pathMatch: 'full'}
 
 ];
