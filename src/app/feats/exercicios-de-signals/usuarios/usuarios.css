@@ -1,6 +1,9 @@
+ul {
+    border-bottom: 2px solid rgb(85, 83, 83);
+}
+
 ul li {
-    margin: 10px 0 50px 40px;
+    margin: 30px 0 30px 50px;
     font-size: 20px;
     font-family: var(--fonte);
-
 }

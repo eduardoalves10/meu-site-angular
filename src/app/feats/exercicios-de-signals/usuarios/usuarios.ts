@@ -8,7 +8,8 @@ import { Usuario } from './usuario';
   styleUrl: './usuarios.css',
 })
 export class Usuarios {
-  usuarios= signal <Usuario[]>([
+  
+  protected readonly usuarios= signal <Usuario[]>([
 
     {
       id: 1,
@@ -25,6 +26,12 @@ export class Usuarios {
     {
       id: 3,
       nome: 'Jordan',
+      idade: 21
+    },
+
+    {
+      id: 4,
+      nome: 'Rafael',
       idade: 21
     }
     
