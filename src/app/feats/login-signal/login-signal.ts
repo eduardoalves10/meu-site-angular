@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 
 @Component({
   selector: 'app-login-signal',
@@ -6,4 +6,7 @@ import { Component } from '@angular/core';
   templateUrl: './login-signal.html',
   styleUrl: './login-signal.css',
 })
-export class LoginSignal {}
+export class LoginSignal {
+
+  protected estadoLogin= signal<string>('logado');
+}

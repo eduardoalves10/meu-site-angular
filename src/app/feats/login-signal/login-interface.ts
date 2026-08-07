@@ -1,1 +1,4 @@
-export interface LoginInterface {}
+export interface LoginInterface {
+    nomeUsuario: string;
+    senha: number | null;
+}

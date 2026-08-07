@@ -1,1 +1,29 @@
-<p>login-signal works!</p>
+<section class="login">
+    <h2>Login:</h2>
+
+    <form>
+        <fieldset>
+            <legend>Login de usuário:</legend>
+
+            <div class="login-senha">
+                <!-- Nome de usuário -->
+                <label for="text">Nome de usuário:</label>
+                <input type="text" placeholder="Nome de usuário">
+
+                <!-- Senha de usuário -->
+                <label for="text">Nome de usuário:</label>
+                <input type="text" placeholder="Nome de usuário">
+            </div>
+        </fieldset>
+
+        <button>Login</button>
+    </form>
+
+    <p>O usuário está {{estadoLogin()}}</p>
+
+    @if (estadoLogin() === 'logado') {
+        <p>O usuário está logado</p>
+    } @else {
+        <p>O usuário está deslogado</p>
+    }
+</section>
