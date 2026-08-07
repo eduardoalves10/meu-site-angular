@@ -2,17 +2,40 @@
     <h2>Cadastre seu produto:</h2>
 
     <form (submit)="cadastrarProduto($event)">
+        <fieldset>
+            <legend>Formulário de cadastro de produto:</legend>
+            
+            <!-- Titulo -->
+            <div class="form">
+                <label for="text">Título do produto:</label>
+                <input type="text" placeholder="Título" [formField]="produtoForm.titulo">
+            </div>
 
-        <!-- Titulo -->
-        <input type="text" placeholder="Título" [formField]="produtoForm.titulo">
+            <!-- Descrição -->
+            <div class="form">
+                <label for="text">Descrição do produto:</label>
+                <input type="text" placeholder="Descrição" [formField]="produtoForm.descricao">
+            </div>
 
-        <!-- Descrição -->
-        <input type="text" placeholder="Descrição" [formField]="produtoForm.descricao">
-
-        <!-- Preço  -->
-        <input type="text" placeholder="Preço" inputmode="numeric" [formField]="produtoForm.preco">
+            <!-- Preço  -->
+            <div class="form">
+                <label for="text">Preço do produto:</label>
+                <input type="text" placeholder="Preço" inputmode="numeric" [formField]="produtoForm.preco">
+            </div>
+        </fieldset>
 
         <button>Cadastrar produto</button>
-
     </form>
+
+    <div class="produtos">
+        @for (produto of produtos(); track produto.titulo) {
+        <div class="produto">
+            <h3>{{produto.titulo}}</h3>
+            <p>{{produto.descricao}}</p>
+            <p>R$ {{produto.preco}}</p>
+        </div>
+        } @empty {
+            <p class="paragrafo-empty">Nenhum produto cadastrado</p>
+        }
+    </div>
 </section>

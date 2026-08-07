@@ -10,28 +10,32 @@ import { form, FormField } from '@angular/forms/signals';
 })
 export class Formulario {
 
-  protected produtoModel= signal<Produto>({
+  protected produtoModel = signal<Produto>({
     titulo: '',
-    descricao:'',
+    descricao: '',
     preco: null
   });
 
-  produtoForm= form(this.produtoModel);
-  
-  cadastrarProduto(event: SubmitEvent) {
+  protected produtoForm = form(this.produtoModel);
+
+  protected produtos = signal<Produto[]>([]);
+
+  protected cadastrarProduto(event: SubmitEvent) {
     event.preventDefault();
 
-    const produto= this.produtoModel();
+    const produto = this.produtoModel();
 
-    alert("O produto foi cadastrado")
+    alert("O produto foi cadastrado");
 
-    console.log(produto)
+    console.log(produto);
 
     this.produtoModel.set({
       titulo: '',
-      descricao:'',
+      descricao: '',
       preco: null
-    })
+    });
+
+    this.produtos.update(valor => [...valor, produto]);
   };
 
-}
+};
