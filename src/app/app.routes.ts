@@ -10,6 +10,7 @@ import { Imagens } from './feats/exercício-6-até-o-8/imagens/imagens';
 import { ExemploSignal } from './feats/exemplo-signal/exemplo-signal';
 import { Usuarios } from './feats/exercicios-de-signals/usuarios/usuarios';
 import { Formulario } from './feats/exemplo-form/formulario/formulario';
+import { LoginSignal } from './feats/login-signal/login-signal';
 
 export const routes: Routes = [
 
@@ -24,6 +25,7 @@ export const routes: Routes = [
     {path: 'exemplo-signal', component: ExemploSignal},
     {path: 'usuarios', component: Usuarios},
     {path: 'formulario', component: Formulario},
+    {path: 'login-signal', component: LoginSignal},
     {path: '', redirectTo: 'home', pathMatch: 'full'}
 
 ];
