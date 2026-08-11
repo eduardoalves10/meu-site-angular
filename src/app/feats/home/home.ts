@@ -5,7 +5,7 @@ import { Footer } from "../../components/footer/footer";
 
 @Component({
   selector: 'app-home',
-  imports: [Header, Main, Footer],
+  imports: [Main],
   templateUrl: './home.html',
   changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './home.css',

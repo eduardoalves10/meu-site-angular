@@ -16,8 +16,7 @@ import { Footer } from './components/footer/footer';
   imports: [
     RouterOutlet,
     Header,
-    Main,
-    Footer,
+    Footer
   ],
   templateUrl: './app.html',
   changeDetection: ChangeDetectionStrategy.Eager,
