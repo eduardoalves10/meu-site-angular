@@ -1,1 +1,4 @@
-export interface EstudanteInterface {}
+export interface EstudanteInterface {
+    nomeAluno: string;
+    mediaFinal: number | null;
+}

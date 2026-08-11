@@ -1,1 +1,33 @@
-<p>cadastro-estudante works!</p>
+<section class="cadastro-estudante">
+    <h2>Cadastro do estudante:</h2>
+
+    <form (submit)="efetuarCadastro($event)">
+        <legend>Cadatro:</legend>
+
+        <div class="estudantes">
+            <div class="estudante">
+                <!-- Nome do aluno: -->
+                <label for="text">Nome do aluno(a):</label>
+                <input type="text" placeholder="Aluno(a)" [formField]="estudanteForm.nomeAluno">
+                @if (estudanteForm.nomeAluno().touched() && estudanteForm.nomeAluno().invalid()) {
+                    @for (error of estudanteForm.nomeAluno().errors(); track error.kind) {
+                        <span class="required">{{error.message}}</span>
+                    }
+                }
+            </div>
+
+            <div class="estudante">
+                <!-- Média final do aluno: -->
+                <label for="text">Média final do aluno(a):</label>
+                <input type="text" placeholder="Aluno(a)" inputmode="numeric" [formField]="estudanteForm.mediaFinal">
+                @if (estudanteForm.mediaFinal().touched() && estudanteForm.mediaFinal().invalid()) {
+                    @for (error of estudanteForm.mediaFinal().errors(); track error.kind) {
+                        <span class="required">{{error.message}}</span>
+                    }
+                }
+            </div>
+        </div>
+
+        <button>Cadastrar</button>
+    </form>
+</section>
