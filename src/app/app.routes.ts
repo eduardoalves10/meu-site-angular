@@ -11,6 +11,7 @@ import { ExemploSignal } from './feats/exemplo-signal/exemplo-signal';
 import { Usuarios } from './feats/exercicios-de-signals/usuarios/usuarios';
 import { Formulario } from './feats/exemplo-form/formulario/formulario';
 import { LoginSignal } from './feats/login-signal/login-signal';
+import { CadastroEstudante } from './feats/cadastro-estudante/cadastro-estudante';
 
 export const routes: Routes = [
 
@@ -26,6 +27,7 @@ export const routes: Routes = [
     {path: 'usuarios', component: Usuarios},
     {path: 'formulario', component: Formulario},
     {path: 'login-signal', component: LoginSignal},
+    {path: 'cadastro-estudante', component: CadastroEstudante},
     {path: '', redirectTo: 'home', pathMatch: 'full'}
 
 ];
