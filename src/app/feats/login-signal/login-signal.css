@@ -1,0 +1,70 @@
+form {
+    background-color: var(--cor-principal);
+    padding: 30px;
+    margin: 60px;
+    border-radius: 20px;
+    box-shadow: var(--sombra);
+}
+
+legend {
+    font-size: 31px;
+    font-family: var(--fonte);
+    margin: 0 0 25px 0;
+    text-align: center;
+    font-weight: bold;
+    color: rgba(61, 59, 59);
+}
+
+.logout {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+label {
+    font-family: var(--fonte);
+    font-size: 18px;
+    font-weight: bold;
+}
+
+input {
+    margin: 8px 0;
+    font-size: 18px;
+    padding: 20px;
+    border-radius: 10px;
+    border: 0 solid;
+    width: 100%;
+    box-shadow: var(--sombra);
+}
+
+.required {
+    color: red;
+    font-size: 14px;
+    font-family: var(--fonte);
+    font-weight: 100;
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    margin: 40px 0 10px;
+    border: 0 solid;
+    transition: .3s;
+    background-color: rgba(71, 70, 70, 0.7);
+    border-radius: 20px;
+    font-size: 15px;
+    font-weight: bold;
+    color: rgb(228, 221, 221);
+}
+
+button:hover {
+    transform: scale(1.01);
+    box-shadow: var(--sombra);
+}
+
+.logado-ou-nao {
+    text-align: center;
+    font-size: 30px;
+    margin: 50px 0 70px;
+    font-family: var(--fonte);
+}

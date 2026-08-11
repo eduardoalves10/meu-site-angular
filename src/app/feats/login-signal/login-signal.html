@@ -1,29 +1,35 @@
 <section class="login">
     <h2>Login:</h2>
 
-    <form>
-        <fieldset>
-            <legend>Login de usuário:</legend>
+    <form (submit)="efetuarLogin($event)">
+        <legend>Login de usuário:</legend>
+
+        <div class="logout">
+            <div class="login-senha">
+                <!-- Email de usuário -->
+                <label for="text">Email do usuário:</label>
+                <input type="email" placeholder="Email" [formField]="loginForm.email">
+                @if (loginForm.email().touched() && loginForm.email().invalid()){
+                    @for (error of loginForm.email().errors(); track error.kind) {
+                        <span class="required">*{{error.message}}</span>
+                    }
+                }
+            </div>
 
             <div class="login-senha">
-                <!-- Nome de usuário -->
-                <label for="text">Nome de usuário:</label>
-                <input type="text" placeholder="Nome de usuário">
-
                 <!-- Senha de usuário -->
-                <label for="text">Nome de usuário:</label>
-                <input type="text" placeholder="Nome de usuário">
+                <label for="text">Senha:</label>
+                <input type="password" inputmode="numeric" placeholder="Senha" [formField]="loginForm.senha">
+                @if (loginForm.senha().touched() && loginForm.senha().invalid()) {
+                    @for (error of loginForm.senha().errors(); track error.kind) {
+                        <span class="required">*{{error.message}}</span>
+                    }
+                }
             </div>
-        </fieldset>
+        </div>
 
-        <button>Login</button>
+        <button [disabled]="loginForm().invalid()">Login</button>
     </form>
 
-    <p>O usuário está {{estadoLogin()}}</p>
-
-    @if (estadoLogin() === 'logado') {
-        <p>O usuário está logado</p>
-    } @else {
-        <p>O usuário está deslogado</p>
-    }
+    <p class="logado-ou-nao">O usuário <strong>@if(!estaLogado()) {não} está logado!</strong></p>
 </section>
