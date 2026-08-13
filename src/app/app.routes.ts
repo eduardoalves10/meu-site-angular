@@ -12,6 +12,7 @@ import { Usuarios } from './feats/exercicios-de-signals/usuarios/usuarios';
 import { Formulario } from './feats/exemplo-form/formulario/formulario';
 import { LoginSignal } from './feats/login-signal/login-signal';
 import { CadastroEstudante } from './feats/cadastro-estudante/cadastro-estudante';
+import { CadastroUsuario } from './feats/cadastro-usuario/cadastro-usuario';
 
 export const routes: Routes = [
 
@@ -28,6 +29,7 @@ export const routes: Routes = [
     {path: 'formulario', component: Formulario},
     {path: 'login-signal', component: LoginSignal},
     {path: 'cadastro-estudante', component: CadastroEstudante},
+    {path: 'cadastro-usuario', component: CadastroUsuario},
     {path: '', redirectTo: 'home', pathMatch: 'full'}
 
 ];
