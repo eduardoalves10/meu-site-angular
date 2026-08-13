@@ -2,7 +2,7 @@
     <h2>Cadastro do estudante:</h2>
 
     <form (submit)="efetuarCadastro($event)">
-        <legend>Cadatro:</legend>
+        <legend>Cadastro:</legend>
 
         <div class="estudantes">
             <div class="estudante">
@@ -30,4 +30,22 @@
 
         <button>Cadastrar</button>
     </form>
+
+    <div class="alunos-cadastrados">
+        @for (aluno of alunos(); track $index) {
+            <div class="aluno-cadastrado">
+                <h3>{{aluno.nomeAluno}}</h3>
+                <p>Média final: {{aluno.mediaFinal}}</p>
+                
+                @if (aluno.mediaFinal !== null) {
+                   @if (aluno.mediaFinal >=7) {
+                    <p class="Aprovado">Aprovado</p>
+                    } @else {
+                    <p class="Reprovado">Reprovado</p>
+                    } 
+                } 
+            </div>
+
+        } @empty {Nenhum aluno cadastrado}
+    </div>
 </section>

@@ -1,6 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { EstudanteInterface } from './estudante-interface';
-import { form, FormField, required } from '@angular/forms/signals';
+import { form, FormField, min, max, required, minLength } from '@angular/forms/signals';
 
 @Component({
   selector: 'app-cadastro-estudante',
@@ -17,11 +17,25 @@ export class CadastroEstudante {
 
   protected estudanteForm= form(this.cadastroModel, (s) => {
     required(s.nomeAluno, {message: 'Nome do aluno(a) é obrigatório'});
+    minLength(s.nomeAluno, 2, {message: 'No mínimo duas letras para o nome'})
 
     required(s.mediaFinal, {message: 'Média final é obrigatória'});
+    min(s.mediaFinal, 0, {message: 'Média final no mínimo 0'})
+    max(s.mediaFinal, 10, {message: 'Média final no máximo 10'})
   });
+
+  protected alunos = signal<EstudanteInterface[]>([]);
 
   protected efetuarCadastro(event: SubmitEvent) {
     event.preventDefault();
+
+    const aluno= this.cadastroModel();
+
+    this.cadastroModel.set({
+      nomeAluno: '',
+      mediaFinal: null
+    });
+
+    this.alunos.update(alunos => [...alunos, aluno]);
   };
 }
