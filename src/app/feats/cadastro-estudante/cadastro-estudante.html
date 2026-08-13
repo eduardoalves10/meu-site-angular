@@ -10,20 +10,20 @@
                 <label for="text">Nome do aluno(a):</label>
                 <input type="text" placeholder="Aluno(a)" [formField]="estudanteForm.nomeAluno">
                 @if (estudanteForm.nomeAluno().touched() && estudanteForm.nomeAluno().invalid()) {
-                    @for (error of estudanteForm.nomeAluno().errors(); track error.kind) {
-                        <span class="required">{{error.message}}</span>
-                    }
+                @for (error of estudanteForm.nomeAluno().errors(); track error.kind) {
+                <span class="required">{{error.message}}</span>
+                }
                 }
             </div>
 
             <div class="estudante">
                 <!-- Média final do aluno: -->
                 <label for="text">Média final do aluno(a):</label>
-                <input type="text" placeholder="Aluno(a)" inputmode="numeric" [formField]="estudanteForm.mediaFinal">
+                <input type="text" placeholder="Média final" inputmode="numeric" [formField]="estudanteForm.mediaFinal">
                 @if (estudanteForm.mediaFinal().touched() && estudanteForm.mediaFinal().invalid()) {
-                    @for (error of estudanteForm.mediaFinal().errors(); track error.kind) {
-                        <span class="required">{{error.message}}</span>
-                    }
+                @for (error of estudanteForm.mediaFinal().errors(); track error.kind) {
+                <span class="required">{{error.message}}</span>
+                }
                 }
             </div>
         </div>
@@ -33,19 +33,22 @@
 
     <div class="alunos-cadastrados">
         @for (aluno of alunos(); track $index) {
-            <div class="aluno-cadastrado">
-                <h3>{{aluno.nomeAluno}}</h3>
-                <p>Média final: {{aluno.mediaFinal}}</p>
-                
-                @if (aluno.mediaFinal !== null) {
-                   @if (aluno.mediaFinal >=7) {
-                    <p class="Aprovado">Aprovado</p>
-                    } @else {
-                    <p class="Reprovado">Reprovado</p>
-                    } 
-                } 
-            </div>
+        <div class="aluno-cadastrado">
+            <h3 class="nome">{{aluno.nomeAluno}}</h3>
+            <p><strong>Média final:</strong> {{aluno.mediaFinal}}</p>
 
-        } @empty {Nenhum aluno cadastrado}
+            @if (aluno.mediaFinal !== null) {
+                @if (aluno.mediaFinal >= 7) {
+                    <p class="aprovado">Aprovado</p>
+                    <img src="" alt="">
+                } @else {
+                    <p class="reprovado">Reprovado</p>
+                }
+            }
+        </div>
+
+        } @empty {
+        <p class="nao-cadastrado">Nenhum aluno cadastrado</p>
+        }
     </div>
 </section>

@@ -10,18 +10,18 @@ import { form, FormField, min, max, required, minLength } from '@angular/forms/s
 })
 export class CadastroEstudante {
 
-  protected cadastroModel= signal<EstudanteInterface>({
+  protected cadastroModel = signal<EstudanteInterface>({
     nomeAluno: '',
     mediaFinal: null
   });
 
-  protected estudanteForm= form(this.cadastroModel, (s) => {
-    required(s.nomeAluno, {message: 'Nome do aluno(a) é obrigatório'});
-    minLength(s.nomeAluno, 2, {message: 'No mínimo duas letras para o nome'})
+  protected estudanteForm = form(this.cadastroModel, (s) => {
+    required(s.nomeAluno, { message: 'Nome do aluno(a) é obrigatório' });
+    minLength(s.nomeAluno, 3, { message: 'No mínimo duas letras para o nome' });
 
-    required(s.mediaFinal, {message: 'Média final é obrigatória'});
-    min(s.mediaFinal, 0, {message: 'Média final no mínimo 0'})
-    max(s.mediaFinal, 10, {message: 'Média final no máximo 10'})
+    required(s.mediaFinal, { message: 'Média final é obrigatória' });
+    min(s.mediaFinal, 0, { message: 'Média final no mínimo 0' });
+    max(s.mediaFinal, 10, { message: 'Média final no máximo 10' });
   });
 
   protected alunos = signal<EstudanteInterface[]>([]);
@@ -29,7 +29,17 @@ export class CadastroEstudante {
   protected efetuarCadastro(event: SubmitEvent) {
     event.preventDefault();
 
-    const aluno= this.cadastroModel();
+    const aluno = this.cadastroModel();
+
+    if (aluno.nomeAluno.length < 2) {
+      return
+    };
+
+    if (aluno.mediaFinal !== null && aluno.mediaFinal < 0) {
+      return
+    } else if (aluno.mediaFinal !== null && aluno.mediaFinal > 10) {
+      return
+    };
 
     this.cadastroModel.set({
       nomeAluno: '',
@@ -38,4 +48,5 @@ export class CadastroEstudante {
 
     this.alunos.update(alunos => [...alunos, aluno]);
   };
+
 }

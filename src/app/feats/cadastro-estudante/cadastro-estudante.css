@@ -67,17 +67,43 @@ button:hover {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 30px;
+    gap: 20px;
 }
 
 .aluno-cadastrado {
+    padding: 30px;
     background-color: var(--cor-principal);
+    border-radius: 10px;
+    margin: 30px 50px 80px 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+    font-family: var(--fonte);
+    box-shadow: var(--sombra);
+}
+
+.nome {
+    color: rgb(65, 62, 62);
 }
 
 .aprovado {
     color: green;
+    font-weight: bold;
 }
 
 .reprovado {
     color: red;
+    font-weight: bold;
+}
+
+.nao-cadastrado {
+    font-family: var(--fonte);
+    font-size: 22px;
+    text-align: center;
+    margin: 0 0 60px 0;
+    background-color: var(--cor-principal);
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: var(--sombra);
 }
