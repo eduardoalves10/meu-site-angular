@@ -62,3 +62,27 @@ button:hover {
     box-shadow: var(--sombra);
     background-color: rgba(226, 9, 9, 0.7);
 }
+
+.usuarios-cadastrados {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.usuario-cadastrado {
+    padding: 30px;
+    background-color: var(--cor-principal);
+    border-radius: 10px;
+    margin: 30px 50px 80px 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+    font-family: var(--fonte);
+    box-shadow: var(--sombra);
+}
+
+h3 {
+    color: rgb(65, 62, 62);
+}

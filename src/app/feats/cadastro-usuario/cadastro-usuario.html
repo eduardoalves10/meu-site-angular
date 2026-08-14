@@ -1,41 +1,77 @@
 <section class="cadastro-usuario">
     <h2>Cadastro de usuário:</h2>
 
-    <form>
+    <form (submit)="efetuarCadastroUsuario($event)">
         <legend>Cadastro:</legend>
 
         <div class="usuarios">
             <div class="usuario">
                 <!-- Nome de usuário -->
                 <label for="text">Nome completo:</label>
-                <input type="text" placeholder="Nome completo">
+                <input type="text" placeholder="Nome completo" [formField]="usuarioForm.nomeCompleto">
+                @if (usuarioForm.nomeCompleto().touched() && usuarioForm.nomeCompleto().invalid()) {
+                    @for (error of usuarioForm.nomeCompleto().errors(); track error.kind) {
+                        <span class="required">{{error.message}}</span>
+                    }
+                }
             </div>
 
             <div class="usuario">
                 <!-- Email -->
                 <label for="text">Email:</label>
-                <input type="text" placeholder="Email">
+                <input type="text" placeholder="Email" [formField]="usuarioForm.email">
+                @if (usuarioForm.email().touched() && usuarioForm.email().invalid()) {
+                    @for (error of usuarioForm.email().errors(); track error.kind) {
+                        <span class="required">{{error.message}}</span>
+                    }
+                }
+            </div>
+
+            <div class="usuario">
+                <!-- Data de nascimento -->
+                <label for="date">Data de nascimento:</label>
+                <input type="text" placeholder="Data de nascimento" [formField]="usuarioForm.dataNascimento">
+                @if (usuarioForm.dataNascimento().touched() && usuarioForm.dataNascimento().invalid()) {
+                    @for (error of usuarioForm.dataNascimento().errors(); track error.kind) {
+                        <span class="required">{{error.message}}</span>
+                    }
+                }
             </div>
 
             <div class="usuario">
                 <!-- Senha -->
                 <label for="text">Senha:</label>
-                <input type="text" placeholder="Senha">
+                <input type="password" placeholder="Senha" [formField]="usuarioForm.senha">
+                @if (usuarioForm.senha().touched() && usuarioForm.senha().invalid()) {
+                    @for (error of usuarioForm.senha().errors(); track error.kind) {
+                        <span class="required">{{error.message}}</span>
+                    }
+                }
             </div>
 
             <div class="usuario">
                 <!-- Confirmação de senha -->
                 <label for="text">Confirmação de senha:</label>
-                <input type="text" placeholder="Confirmação de senha">
-            </div>
-
-            <div class="usuario">
-                <!-- Data de nascimento -->
-                <label for="text">Data de nascimento:</label>
-                <input type="text" placeholder="Data de nascimento">
+                <input type="password" placeholder="Confirmação de senha" [formField]="usuarioForm.confirmacaoSenha">
+                @if (usuarioForm.confirmacaoSenha().touched() && usuarioForm.confirmacaoSenha().invalid()) {
+                    @for (error of usuarioForm.confirmacaoSenha().errors(); track error.kind) {
+                        <span class="required">{{error.message}}</span>
+                    }
+                }
             </div>
         </div>
 
-        <button>Cadastrar usuário</button>
+        <button [disabled]="usuarioForm().invalid()">Cadastrar usuário</button>
     </form>
+
+    <div class="usuarios-cadastrados">
+        @for (usuario of usuarios(); track usuario.nomeCompleto) {
+            <div class="usuario-cadastrado">
+                <h3><strong>Nome:</strong> {{usuario.nomeCompleto}}</h3>
+                <p><strong>Email:</strong> {{usuario.email}}</p>
+                <p><strong>Data de nascimento:</strong> {{usuario.dataNascimento}}</p>
+                <p><strong>Senha:</strong> {{usuario.senha}}</p>
+            </div>
+        }
+    </div>
 </section>
