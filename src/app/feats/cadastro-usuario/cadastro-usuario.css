@@ -35,6 +35,7 @@ input {
     border: 0 solid;
     width: 100%;
     box-shadow: var(--sombra);
+    font-family: var(--fonte);
 }
 
 .required {

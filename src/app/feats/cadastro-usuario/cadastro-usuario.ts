@@ -17,6 +17,8 @@ export class CadastroUsuario {
     confirmacaoSenha: ''
   });
 
+  protected dataMaxima = new Date().toISOString().split('T')[0];
+
   protected usuarioForm = form(this.usuarioModel, (s) => {
 
     // Instância do nome completo
@@ -29,8 +31,6 @@ export class CadastroUsuario {
 
     // Instância da data de nascimento
     required(s.dataNascimento, { message: 'Data de nascimento é obrigatório' });
-    minLength(s.dataNascimento, 10, { message: 'No mínimo 10 caracteres' });
-    maxLength(s.dataNascimento, 10, { message: 'No máximo 10 caracteres' });
 
     // Instância da senha
     required(s.senha, { message: 'Senha é obrigatório' });
@@ -49,10 +49,6 @@ export class CadastroUsuario {
     const usuario = this.usuarioModel();
 
     if (usuario.nomeCompleto.length < 2) {
-      return
-    };
-
-    if (usuario.dataNascimento.length !== 10) {
       return
     };
 

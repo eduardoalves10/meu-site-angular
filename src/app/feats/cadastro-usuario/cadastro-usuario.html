@@ -7,8 +7,8 @@
         <div class="usuarios">
             <div class="usuario">
                 <!-- Nome de usuário -->
-                <label for="text">Nome completo:</label>
-                <input type="text" placeholder="Nome completo" [formField]="usuarioForm.nomeCompleto">
+                <label for="nome-completo">Nome completo:</label>
+                <input type="text" id="nome-completo" placeholder="Nome completo" [formField]="usuarioForm.nomeCompleto">
                 @if (usuarioForm.nomeCompleto().touched() && usuarioForm.nomeCompleto().invalid()) {
                     @for (error of usuarioForm.nomeCompleto().errors(); track error.kind) {
                         <span class="required">{{error.message}}</span>
@@ -18,8 +18,8 @@
 
             <div class="usuario">
                 <!-- Email -->
-                <label for="text">Email:</label>
-                <input type="text" placeholder="Email" [formField]="usuarioForm.email">
+                <label for="email">Email:</label>
+                <input type="text" id="email" placeholder="Email" [formField]="usuarioForm.email">
                 @if (usuarioForm.email().touched() && usuarioForm.email().invalid()) {
                     @for (error of usuarioForm.email().errors(); track error.kind) {
                         <span class="required">{{error.message}}</span>
@@ -29,8 +29,8 @@
 
             <div class="usuario">
                 <!-- Data de nascimento -->
-                <label for="date">Data de nascimento:</label>
-                <input type="text" placeholder="Data de nascimento" [formField]="usuarioForm.dataNascimento">
+                <label for="data-nascimento">Data de nascimento:</label>
+                <input type="date" id="data-nascimento" placeholder="Data de nascimento" [max]="dataMaxima" [formField]="usuarioForm.dataNascimento">
                 @if (usuarioForm.dataNascimento().touched() && usuarioForm.dataNascimento().invalid()) {
                     @for (error of usuarioForm.dataNascimento().errors(); track error.kind) {
                         <span class="required">{{error.message}}</span>
@@ -40,8 +40,8 @@
 
             <div class="usuario">
                 <!-- Senha -->
-                <label for="text">Senha:</label>
-                <input type="password" placeholder="Senha" [formField]="usuarioForm.senha">
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" placeholder="Senha" [formField]="usuarioForm.senha">
                 @if (usuarioForm.senha().touched() && usuarioForm.senha().invalid()) {
                     @for (error of usuarioForm.senha().errors(); track error.kind) {
                         <span class="required">{{error.message}}</span>
@@ -51,8 +51,8 @@
 
             <div class="usuario">
                 <!-- Confirmação de senha -->
-                <label for="text">Confirmação de senha:</label>
-                <input type="password" placeholder="Confirmação de senha" [formField]="usuarioForm.confirmacaoSenha">
+                <label for="confirmacao-senha">Confirmação de senha:</label>
+                <input type="password" id="confirmacao-senha" placeholder="Confirmação de senha" [formField]="usuarioForm.confirmacaoSenha">
                 @if (usuarioForm.confirmacaoSenha().touched() && usuarioForm.confirmacaoSenha().invalid()) {
                     @for (error of usuarioForm.confirmacaoSenha().errors(); track error.kind) {
                         <span class="required">{{error.message}}</span>
