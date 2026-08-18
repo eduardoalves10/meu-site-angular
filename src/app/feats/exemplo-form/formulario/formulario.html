@@ -28,7 +28,7 @@
     </form>
 
     <div class="produtos">
-        @for (produto of produtos(); track produto.titulo) {
+        @for (produto of formularioService.produtos(); track produto.titulo) {
         <div class="produto">
             <h3>{{produto.titulo}}</h3>
             <p>{{produto.descricao}}</p>

@@ -1,6 +1,7 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { Produto } from './produto';
 import { form, FormField } from '@angular/forms/signals';
+import { FormularioService } from './formulario-service';
 
 @Component({
   selector: 'app-formulario',
@@ -10,6 +11,8 @@ import { form, FormField } from '@angular/forms/signals';
 })
 export class Formulario {
 
+  protected readonly formularioService= inject(FormularioService);
+
   protected produtoModel = signal<Produto>({
     titulo: '',
     descricao: '',
@@ -18,7 +21,7 @@ export class Formulario {
 
   protected produtoForm = form(this.produtoModel);
 
-  protected produtos = signal<Produto[]>([]);
+  // protected produtos = signal<Produto[]>([]);
 
   protected cadastrarProduto(event: SubmitEvent) {
     event.preventDefault();
@@ -35,7 +38,9 @@ export class Formulario {
       preco: null
     });
 
-    this.produtos.update(valor => [...valor, produto]);
+    // this.produtos.update(valor => [...valor, produto]);
+
+    this.formularioService.cadastrarProduto(produto);
   };
 
 };
