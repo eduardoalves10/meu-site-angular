@@ -1,6 +1,7 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { EstudanteInterface } from './estudante-interface';
 import { form, FormField, min, max, required, minLength } from '@angular/forms/signals';
+import { CadastroEstudanteService } from './cadastro-estudante-service';
 
 @Component({
   selector: 'app-cadastro-estudante',
@@ -9,6 +10,8 @@ import { form, FormField, min, max, required, minLength } from '@angular/forms/s
   styleUrl: './cadastro-estudante.css',
 })
 export class CadastroEstudante {
+
+  protected readonly cadastroEstudanteService= inject(CadastroEstudanteService);
 
   protected cadastroModel = signal<EstudanteInterface>({
     nomeAluno: '',
@@ -24,7 +27,7 @@ export class CadastroEstudante {
     max(s.mediaFinal, 10, { message: 'Média final no máximo 10' });
   });
 
-  protected alunos = signal<EstudanteInterface[]>([]);
+  // protected alunos = signal<EstudanteInterface[]>([]);
 
   protected efetuarCadastro(event: SubmitEvent) {
     event.preventDefault();
@@ -46,7 +49,9 @@ export class CadastroEstudante {
       mediaFinal: null
     });
 
-    this.alunos.update(alunos => [...alunos, aluno]);
+    // this.alunos.update(valor => [...valor, aluno]);
+
+    this.cadastroEstudanteService.efetuarCadastro(aluno);
   };
 
 }

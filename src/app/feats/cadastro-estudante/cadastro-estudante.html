@@ -32,7 +32,7 @@
     </form>
 
     <div class="alunos-cadastrados">
-        @for (aluno of alunos(); track $index) {
+        @for (aluno of cadastroEstudanteService.alunos(); track $index) {
         <div class="aluno-cadastrado">
             <h3 class="nome">{{aluno.nomeAluno}}</h3>
             <p><strong>Média final:</strong> {{aluno.mediaFinal}}</p>
