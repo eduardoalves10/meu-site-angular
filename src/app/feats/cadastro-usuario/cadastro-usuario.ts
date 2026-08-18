@@ -1,6 +1,7 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { CadastroInterface } from './cadastro-interface';
 import { form, required, FormField, min, minLength, email, maxLength } from '@angular/forms/signals';
+import { CadastroUsuarioService } from './cadastro-usuario-service';
 
 @Component({
   selector: 'app-cadastro-usuario',
@@ -9,6 +10,9 @@ import { form, required, FormField, min, minLength, email, maxLength } from '@an
   styleUrl: './cadastro-usuario.css',
 })
 export class CadastroUsuario {
+
+  protected readonly cadastroUsuarioService= inject(CadastroUsuarioService); 
+
   protected usuarioModel = signal<CadastroInterface>({
     nomeCompleto: '',
     email: '',
@@ -41,7 +45,7 @@ export class CadastroUsuario {
     minLength(s.confirmacaoSenha, 6, { message: 'No mínimo 6 caracteres' });
   });
 
-  protected usuarios = signal<CadastroInterface[]>([]);
+  // protected usuarios = signal<CadastroInterface[]>([]);
 
   protected efetuarCadastroUsuario(event: SubmitEvent) {
     event.preventDefault();
@@ -66,7 +70,9 @@ export class CadastroUsuario {
       confirmacaoSenha: ''
     });
 
-    this.usuarios.update(usuarios => [...usuarios, usuario]);
+    // this.usuarios.update(usuarios => [...usuarios, usuario]);
+
+    this.cadastroUsuarioService.efetuarCadastroUsuario(usuario);
 
     this.usuarioForm().reset();
   };

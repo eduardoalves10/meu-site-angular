@@ -65,7 +65,7 @@
     </form>
 
     <div class="usuarios-cadastrados">
-        @for (usuario of usuarios(); track usuario.nomeCompleto) {
+        @for (usuario of cadastroUsuarioService.usuarios(); track usuario.nomeCompleto) {
             <div class="usuario-cadastrado">
                 <h3><strong>Nome:</strong> {{usuario.nomeCompleto}}</h3>
                 <p><strong>Email:</strong> {{usuario.email}}</p>
