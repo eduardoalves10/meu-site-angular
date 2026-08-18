@@ -2,7 +2,7 @@
     <h2>Usuários cadastrados:</h2>
 
     <div class="users">
-        @for (usuario of usuarios(); track usuario.id) {
+        @for (usuario of usuariosService.usuarios(); track usuario.id) {
             <div class="user">
                 <p>ID de usuário: <strong>{{usuario.id}}</strong>;</p>
                 <p>Nome: <strong>{{usuario.nome}}</strong>;</p>
