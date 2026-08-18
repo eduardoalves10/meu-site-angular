@@ -102,8 +102,4 @@ button:hover {
     font-size: 22px;
     text-align: center;
     margin: 0 0 60px 0;
-    background-color: var(--cor-principal);
-    padding: 20px;
-    border-radius: 20px;
-    box-shadow: var(--sombra);
 }
