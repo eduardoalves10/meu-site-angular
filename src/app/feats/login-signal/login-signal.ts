@@ -31,7 +31,9 @@ export class LoginSignal {
   protected efetuarLogin(event: SubmitEvent) {
     event.preventDefault();
 
-    const login = this.loginModel();
+    const login = this.loginSignalService.efetuarLogin(this.loginModel());
+
+    this.estaLogado.set(login);
   };
 
 }
