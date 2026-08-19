@@ -1,4 +1,4 @@
-import { Service, signal } from '@angular/core';
+import { Service } from '@angular/core';
 import { LoginInterface } from './login-interface';
 
 @Service()
