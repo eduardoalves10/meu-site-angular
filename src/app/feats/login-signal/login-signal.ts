@@ -31,20 +31,24 @@ export class LoginSignal {
   protected efetuarLogin(event: SubmitEvent) {
     event.preventDefault();
 
-    const login = this.loginModel();
+    const usuario = this.loginModel();
 
-    const logou = this.loginSignalService.efetuarLogin(login);
+    this.estaLogado.set(this.loginSignalService.validarEduardo(usuario));
 
-    if (logou === true) {
-      this.estaLogado.set(true);
-    } else {
-      this.estaLogado.set(false);
-    }
+    // const logou = this.loginSignalService.efetuarLogin(login);
+
+    // if (logou === true) {
+    //   this.estaLogado.set(true);
+    // } else {
+    //   this.estaLogado.set(false);
+    // };
 
     this.loginModel.set({
       email: '',
       senha: ''
     });
+
+    this.loginForm().reset();
   };
 
 }
