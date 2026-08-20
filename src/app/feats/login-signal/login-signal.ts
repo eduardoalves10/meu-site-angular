@@ -11,7 +11,7 @@ import { LoginSignalService } from './login-signal-service';
 })
 export class LoginSignal {
 
-  protected readonly loginSignalService= inject(LoginSignalService);
+  protected readonly loginSignalService = inject(LoginSignalService);
 
   protected loginModel = signal<LoginInterface>({
     email: '',
@@ -31,9 +31,20 @@ export class LoginSignal {
   protected efetuarLogin(event: SubmitEvent) {
     event.preventDefault();
 
-    const login = this.loginSignalService.efetuarLogin(this.loginModel());
+    const login = this.loginModel();
 
-    this.estaLogado.set(login);
+    const logou = this.loginSignalService.efetuarLogin(login);
+
+    if (logou === true) {
+      this.estaLogado.set(true);
+    } else {
+      this.estaLogado.set(false);
+    }
+
+    this.loginModel.set({
+      email: '',
+      senha: ''
+    });
   };
 
 }

@@ -4,11 +4,12 @@ import { LoginInterface } from './login-interface';
 @Service()
 export class LoginSignalService {
 
-    efetuarLogin(usuario: LoginInterface) {
-        if (usuario.email === 'eduardo@gmail.com' && usuario.senha === '1234567') {
+    efetuarLogin(credenciais: LoginInterface) {
+        if (credenciais.email === 'eduardo@gmail.com' && credenciais.senha === '1234567') {
             return true
+        } else {
+            return false
         }
-        return false
     }
 
 }
