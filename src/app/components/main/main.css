@@ -13,6 +13,17 @@ h2 {
     border-bottom: 1px solid rgb(85, 83, 83);
 }
 
+.imagens {
+    display: flex;
+    justify-content: center;    
+}
+
+.minha-foto {
+    margin: 10px 0 40px 0;
+    border-radius: 50%;
+    border: 2px solid var(--cor-importante);
+}
+
 .cards {
     display: flex;
     justify-content: center;
