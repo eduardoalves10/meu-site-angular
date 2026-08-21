@@ -13,6 +13,7 @@ import { Formulario } from './feats/exemplo-form/formulario/formulario';
 import { LoginSignal } from './feats/login-signal/login-signal';
 import { CadastroEstudante } from './feats/cadastro-estudante/cadastro-estudante';
 import { CadastroUsuario } from './feats/cadastro-usuario/cadastro-usuario';
+import { ExemploPost } from './feats/exemplo-post/exemplo-post';
 
 export const routes: Routes = [
 
@@ -30,6 +31,7 @@ export const routes: Routes = [
     {path: 'login-signal', component: LoginSignal},
     {path: 'cadastro-estudante', component: CadastroEstudante},
     {path: 'cadastro-usuario', component: CadastroUsuario},
+    {path: 'exemplo-post', component: ExemploPost},
     {path: '', redirectTo: 'home', pathMatch: 'full'}
 
 ];
