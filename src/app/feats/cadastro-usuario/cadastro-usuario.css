@@ -87,3 +87,10 @@ button:hover {
 h3 {
     color: rgb(65, 62, 62);
 }
+
+.nao-cadastrado {
+    text-align: center;
+    margin: 30px 0 70px 0;
+    font-family: var(--fonte);
+    font-size: 20px;
+}

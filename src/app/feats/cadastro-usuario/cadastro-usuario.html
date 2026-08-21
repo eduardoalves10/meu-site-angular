@@ -72,6 +72,8 @@
                 <p><strong>Data de nascimento:</strong> {{usuario.dataNascimento}}</p>
                 <p><strong>Senha:</strong> {{usuario.senha}}</p>
             </div>
+        } @empty {
+            <p class="nao-cadastrado">Nenhum usuário cadastrado!</p>
         }
     </div>
 </section>
