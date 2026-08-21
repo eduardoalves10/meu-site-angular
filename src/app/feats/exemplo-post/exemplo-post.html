@@ -1,1 +1,45 @@
-<p>exemplo-post works!</p>
+<section class="exemplo-post">
+    <h2>Post:</h2>
+
+    <form (submit)="cadastroUsuario($event)">
+        <legend>Exemplo Post</legend>
+
+        <div class="posts">
+            <div class="post">
+                <!-- ID de usuário -->
+                <label for="userId">ID do Usuario</label>
+                <input id="userId" type="text" placeholder="ID" [formField]="postForm.userId">
+                @if (postForm.userId().touched() && postForm.userId().invalid()) {
+                    @for (error of postForm.userId().errors(); track error.kind) {
+                        <span class="required">{{error.message}}</span>
+                    }
+                }
+            </div>
+
+            <div class="post">
+                <!-- Title -->
+                <label for="title">Title</label>
+                <input id="title" type="text" placeholder="Title" [formField]="postForm.title">
+                @if (postForm.title().touched() && postForm.title().invalid()) {
+                    @for (error of postForm.title().errors(); track error.kind) {
+                        <span class="required">{{error.message}}</span>
+                    }
+                }
+            </div>
+
+            <div class="post">
+                <!-- Body -->
+                <label for="body">Body</label>
+                <input id="body" type="text" placeholder="Body" [formField]="postForm.body">
+                @if (postForm.body().touched() && postForm.body().invalid()) {
+                    @for (error of postForm.body().errors(); track error.kind) {
+                        <span class="required">{{error.message}}</span>
+                    }
+                }
+            </div>
+        </div>
+
+        <button>Cadastrar</button>
+    </form>
+
+</section>
