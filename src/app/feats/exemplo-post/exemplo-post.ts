@@ -2,7 +2,6 @@ import { Component, inject, signal } from '@angular/core';
 import { InterfacePost } from './interface-post';
 import { form, required, FormField } from '@angular/forms/signals';
 import { ExemploPostService } from './exemplo-post-service';
-import { Usuarios } from '../exercicios-de-signals/usuarios/usuarios';
 
 @Component({
   selector: 'app-exemplo-post',
