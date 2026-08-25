@@ -1,1 +1,57 @@
-<p>exemplo-put works!</p>
+<section class="exemplo-put">
+    <h2>Put:</h2>
+
+    <form (submit)="cadastroUsuario($event)">
+        <legend>Exemplo Put</legend>
+
+        <div class="puts">
+            <div class="put">
+                <!-- ID de usuário -->
+                <label for="id">ID do Usuario</label>
+                <input id="id" type="text" placeholder="ID" [formField]="putForm.id">
+                @if (putForm.id().touched() && putForm.id().invalid()) {
+                    @for (error of putForm.id().errors(); track error.kind) {
+                        <span class="required">{{error.message}}</span>
+                    }
+                }
+            </div>
+
+            <div class="put">
+                <!-- UserID de usuário -->
+                <label for="userId">UserID do Usuario</label>
+                <input id="userId" type="text" placeholder="ID" [formField]="putForm.userId">
+                @if (putForm.userId().touched() && putForm.userId().invalid()) {
+                    @for (error of putForm.userId().errors(); track error.kind) {
+                        <span class="required">{{error.message}}</span>
+                    }
+                }
+            </div>
+
+            <div class="put">
+                <!-- Title -->
+                <label for="title">Title</label>
+                <input id="title" type="text" placeholder="Title" [formField]="putForm.title">
+                @if (putForm.title().touched() && putForm.title().invalid()) {
+                    @for (error of putForm.title().errors(); track error.kind) {
+                        <span class="required">{{error.message}}</span>
+                    }
+                }
+            </div>
+
+            <div class="put">
+                <!-- Body -->
+                <label for="body">Body</label>
+                <input id="body" type="text" placeholder="Body" [formField]="putForm.body">
+                @if (putForm.body().touched() && putForm.body().invalid()) {
+                    @for (error of putForm.body().errors(); track error.kind) {
+                        <span class="required">{{error.message}}</span>
+                    }
+                }
+            </div>
+        </div>
+
+        <button>Cadastrar</button>
+    </form>
+
+</section>
+
