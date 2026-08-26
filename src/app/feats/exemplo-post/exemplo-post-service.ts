@@ -3,6 +3,7 @@ import { inject, Service } from '@angular/core';
 import { InterfacePost } from './interface-post';
 import { InterfacePut } from '../exemplo-put/interface-put';
 import { InterfaceDelete } from '../exemplo-delete/interface-delete';
+import { PostResponse } from './post-response';
 
 @Service()
 export class ExemploPostService {
@@ -15,7 +16,7 @@ export class ExemploPostService {
 
     // Post da API
     cadastrarPostDoService(postCadastrado: InterfacePost) {
-        return this.httpClient.post(this.urlApi, postCadastrado);
+        return this.httpClient.post<PostResponse>(this.urlApi, postCadastrado);
     };
 
     // Put da API

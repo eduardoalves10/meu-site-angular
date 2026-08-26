@@ -48,10 +48,10 @@ export class ExemploPost {
     this.exemploPostService.cadastrarPostDoService(post).subscribe({
 
       // Se o post é enviado corretamente, ele segue a sequência do "next"
-      next: () => {
+      next: (response) => {
 
         // Alerta acionado quando o Post é cadastrado
-        alert ('Post cadastrado!');
+        alert ('Post cadastrado com ID:' + response.id);
 
         // Limpa o formulário depois de clicar no botão, fazendo com que os valores fiquem nulos
         this.postModel.set({
