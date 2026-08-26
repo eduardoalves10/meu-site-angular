@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Service } from '@angular/core';
 import { InterfacePost } from './interface-post';
+import { InterfacePut } from '../exemplo-put/interface-put';
 
 @Service()
 export class ExemploPostService {
@@ -14,6 +15,11 @@ export class ExemploPostService {
     // Post da API
     cadastrarPostDoService(postCadastrado: InterfacePost) {
         return this.httpClient.post(this.urlApi, postCadastrado);
+    };
+
+    // Put da API
+    atualizarPostDoService(putCadastrado: InterfacePut) {
+        return this.httpClient.put(this.urlApi + '/' + putCadastrado.id, putCadastrado);
     };
 
 } 

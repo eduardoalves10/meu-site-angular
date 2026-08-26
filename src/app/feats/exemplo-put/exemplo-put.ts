@@ -20,7 +20,7 @@ export class ExemploPut {
     body: ''
   });
 
-  protected usuarios = signal<InterfacePut[]>([]);
+  protected puts = signal<InterfacePut[]>([]);
 
   protected putForm = form(this.putModel, (user) => {
 
@@ -28,7 +28,7 @@ export class ExemploPut {
     required(user.id, { message: 'ID é obrigatório' });
     
     // UserID de usuario
-    required(user.userId, { message: 'ID é obrigatório' });
+    required(user.userId, { message: 'UserID é obrigatório' });
 
     // Title
     required(user.title, { message: 'Title é obrigatório' });
@@ -38,15 +38,15 @@ export class ExemploPut {
 
   });
 
-  protected cadastroUsuario(event: SubmitEvent) {
+  protected atualizarPost(event: SubmitEvent) {
     event.preventDefault();
 
-    const post = this.putModel();
+    const put = this.putModel();
 
-    this.exemploPostService.cadastrarPostDoService(post).subscribe({
+     this.exemploPostService.atualizarPostDoService(this.putModel()).subscribe({
 
       next: () => {
-        alert ('Post cadastrado!');
+        alert ('Post atualizado!');
 
         this.putModel.set({
           id: null,
@@ -59,12 +59,11 @@ export class ExemploPut {
       },
        
       error: () => {
-
         alert ('Algo deu errado!');
       }
     });
 
-    this.usuarios.update(valor => [...valor, post]);
+    this.puts.update(valor => [...valor, put]);
 
   };
 }

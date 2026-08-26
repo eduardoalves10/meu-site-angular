@@ -1,7 +1,7 @@
 <section class="exemplo-put">
     <h2>Put:</h2>
 
-    <form (submit)="cadastroUsuario($event)">
+    <form (submit)="atualizarPost($event)">
         <legend>Exemplo Put</legend>
 
         <div class="puts">
@@ -19,7 +19,7 @@
             <div class="put">
                 <!-- UserID de usuário -->
                 <label for="userId">UserID do Usuario</label>
-                <input id="userId" type="text" placeholder="ID" [formField]="putForm.userId">
+                <input id="userId" type="text" placeholder="UserID" [formField]="putForm.userId">
                 @if (putForm.userId().touched() && putForm.userId().invalid()) {
                     @for (error of putForm.userId().errors(); track error.kind) {
                         <span class="required">{{error.message}}</span>
