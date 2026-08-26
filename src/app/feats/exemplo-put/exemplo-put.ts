@@ -27,7 +27,7 @@ export class ExemploPut {
     // ID de usuario
     required(user.id, { message: 'ID é obrigatório' });
     
-    // UserID de usuario
+    // UserID
     required(user.userId, { message: 'UserID é obrigatório' });
 
     // Title

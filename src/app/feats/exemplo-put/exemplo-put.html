@@ -17,8 +17,8 @@
             </div>
 
             <div class="put">
-                <!-- UserID de usuário -->
-                <label for="userId">UserID do Usuario</label>
+                <!-- UserID -->
+                <label for="userId">UserID</label>
                 <input id="userId" type="text" placeholder="UserID" [formField]="putForm.userId">
                 @if (putForm.userId().touched() && putForm.userId().invalid()) {
                     @for (error of putForm.userId().errors(); track error.kind) {
@@ -50,7 +50,7 @@
             </div>
         </div>
 
-        <button>Cadastrar</button>
+        <button>Atualizar Post</button>
     </form>
 
 </section>
