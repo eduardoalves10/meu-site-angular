@@ -6,9 +6,9 @@
 
         <div class="posts">
             <div class="post">
-                <!-- ID de usuário -->
-                <label for="userId">ID do Usuario</label>
-                <input id="userId" type="text" placeholder="ID" [formField]="postForm.userId">
+                <!-- UserID de usuário -->
+                <label for="userId">UserID</label>
+                <input id="userId" type="text" placeholder="UserID" [formField]="postForm.userId">
                 @if (postForm.userId().touched() && postForm.userId().invalid()) {
                     @for (error of postForm.userId().errors(); track error.kind) {
                         <span class="required">{{error.message}}</span>
@@ -39,7 +39,7 @@
             </div>
         </div>
 
-        <button>Cadastrar</button>
+        <button>Cadastrar Post</button>
     </form>
 
 </section>

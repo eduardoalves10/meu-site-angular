@@ -28,7 +28,7 @@ export class ExemploPost {
   protected postForm = form(this.postModel, (user) => {
 
     // ID de usuario
-    required(user.userId, { message: 'ID é obrigatório' });
+    required(user.userId, { message: 'UserID é obrigatório' });
 
     // Title
     required(user.title, { message: 'Title é obrigatório' });
