@@ -1,1 +1,23 @@
-<p>exemplo-delete works!</p>
+<section class="exemplo-delete">
+    <h2>Delete:</h2>
+
+    <form (submit)="deletarPost($event)">
+        <legend>Exemplo Delete</legend>
+
+        <div class="deletes">
+            <div class="delete">
+                <!-- ID de usuário -->
+                <label for="id">ID do Usuario</label>
+                <input id="id" type="text" placeholder="ID" [formField]="deleteForm.id">
+                @if (deleteForm.id().touched() && deleteForm.id().invalid()) {
+                    @for (error of deleteForm.id().errors(); track error.kind) {
+                        <span class="required">{{error.message}}</span>
+                    }
+                }
+            </div>
+        </div>
+
+        <button>Deletar ID</button>
+    </form>
+
+</section>

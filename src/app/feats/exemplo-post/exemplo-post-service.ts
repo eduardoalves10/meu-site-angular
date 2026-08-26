@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { inject, Service } from '@angular/core';
 import { InterfacePost } from './interface-post';
 import { InterfacePut } from '../exemplo-put/interface-put';
+import { InterfaceDelete } from '../exemplo-delete/interface-delete';
 
 @Service()
 export class ExemploPostService {
@@ -20,6 +21,11 @@ export class ExemploPostService {
     // Put da API
     atualizarPostDoService(putCadastrado: InterfacePut) {
         return this.httpClient.put(this.urlApi + '/' + putCadastrado.id, putCadastrado);
+    };
+
+    // Delete da API
+    deletaPostDoService(deleteCadastrado: InterfaceDelete) {
+        return this.httpClient.delete(this.urlApi + '/' + deleteCadastrado.id);
     };
 
 } 
