@@ -71,11 +71,15 @@ img {
 }
 
 .verde {
-    color: green;
+    color: rgba(0, 128, 0);
+}
+
+.azul {
+    color: rgba(4, 113, 238);
 }
 
 .vermelho {
-    color: red;
+    color: rgba(255, 0, 0);
 }
 
 .hobies {
