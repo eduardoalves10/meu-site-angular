@@ -1,1 +1,21 @@
-<p>exemplo-get works!</p>
+<section class="exemplo-get">
+    <h2>Get:</h2>
+
+    <div class="gets">
+
+        @if (consumoService.postsDetails.isLoading()) {
+            <p>Carregando...</p>
+        } @else {
+            @for (post of consumoService.postsDetails.value(); track post.id) {
+                <div class="get">
+                    <h3>Título: {{post.title}}</h3>
+                    <p><strong>Corpo:</strong> {{post.body}}</p>
+                    <p><strong>UserID:</strong> {{post.userId}}</p>
+                    <p><strong>ID:</strong> {{post.id}}</p>
+                </div>
+            }
+        }
+  
+    </div>
+
+</section>

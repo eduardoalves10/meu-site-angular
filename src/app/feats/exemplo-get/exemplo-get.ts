@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { ExemploPostService } from '../exemplo-post/exemplo-post-service';
 
 @Component({
   selector: 'app-exemplo-get',
@@ -6,4 +7,8 @@ import { Component } from '@angular/core';
   templateUrl: './exemplo-get.html',
   styleUrl: './exemplo-get.css',
 })
-export class ExemploGet {}
+export class ExemploGet {
+
+  protected readonly consumoService = inject(ExemploPostService);
+
+}

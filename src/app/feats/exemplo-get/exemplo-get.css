@@ -1,0 +1,30 @@
+.gets {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.get {
+    background-color: var(--cor-principal);
+    padding: 20px;
+    margin: 20px 15px 30px;
+    border-radius: 10px;
+    font-family: var(--fonte);
+    width: 300px;
+    box-shadow: var(--sombra);
+    text-align: center;
+}
+
+h3 {
+    margin-bottom: 15px;
+    color: rgb(65, 62, 62);
+}
+
+p {
+    margin-bottom: 10px;
+}
+
+
+
+

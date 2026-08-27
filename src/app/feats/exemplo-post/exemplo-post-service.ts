@@ -1,10 +1,11 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, httpResource } from '@angular/common/http';
 import { inject, Service } from '@angular/core';
 import { InterfacePost } from './interface-post';
 import { InterfacePut } from '../exemplo-put/interface-put';
 import { InterfaceDelete } from '../exemplo-delete/interface-delete';
 import { PostResponse } from './post-response';
 import { PutResponse } from '../exemplo-put/put-response';
+import { InterfaceGet } from '../exemplo-get/interface-get';
 
 @Service()
 export class ExemploPostService {
@@ -29,5 +30,11 @@ export class ExemploPostService {
     deletaPostDoService(deleteCadastrado: InterfaceDelete) {
         return this.httpClient.delete(this.urlApi + '/' + deleteCadastrado.id);
     };
+
+    // Get da API
+    readonly postsDetails = httpResource<InterfaceGet[]>(
+        () => this.urlApi,
+        { defaultValue: [] }
+    );
 
 } 
