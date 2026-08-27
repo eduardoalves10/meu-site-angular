@@ -16,6 +16,7 @@ import { CadastroUsuario } from './feats/cadastro-usuario/cadastro-usuario';
 import { ExemploPost } from './feats/exemplo-post/exemplo-post';
 import { ExemploPut } from './feats/exemplo-put/exemplo-put';
 import { ExemploDelete } from './feats/exemplo-delete/exemplo-delete';
+import { ExemploGet } from './feats/exemplo-get/exemplo-get';
 
 export const routes: Routes = [
 
@@ -36,6 +37,7 @@ export const routes: Routes = [
     {path: 'exemplo-post', component: ExemploPost},
     {path: 'exemplo-put', component: ExemploPut},
     {path: 'exemplo-delete', component: ExemploDelete},
+    {path: 'exemplo-get', component: ExemploGet},
     {path: '', redirectTo: 'home', pathMatch: 'full'}
 
 ];
