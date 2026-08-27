@@ -45,8 +45,8 @@ export class ExemploPut {
 
      this.exemploPostService.atualizarPostDoService(this.putModel()).subscribe({
 
-      next: () => {
-        alert ('Post atualizado!');
+      next: (response) => {
+        alert ('Post do ID ' + response.id + ' foi atualizado com sucesso!');
 
         this.putModel.set({
           id: null,

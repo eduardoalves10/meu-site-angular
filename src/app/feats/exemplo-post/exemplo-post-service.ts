@@ -4,6 +4,7 @@ import { InterfacePost } from './interface-post';
 import { InterfacePut } from '../exemplo-put/interface-put';
 import { InterfaceDelete } from '../exemplo-delete/interface-delete';
 import { PostResponse } from './post-response';
+import { PutResponse } from '../exemplo-put/put-response';
 
 @Service()
 export class ExemploPostService {
@@ -21,7 +22,7 @@ export class ExemploPostService {
 
     // Put da API
     atualizarPostDoService(putCadastrado: InterfacePut) {
-        return this.httpClient.put(this.urlApi + '/' + putCadastrado.id, putCadastrado);
+        return this.httpClient.put<PutResponse>(this.urlApi + '/' + putCadastrado.id, putCadastrado);
     };
 
     // Delete da API

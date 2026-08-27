@@ -1,1 +1,6 @@
-export interface PutResponse {}
+export interface PutResponse {
+    id: number | null;
+    userId: number | null; 
+    title: string;
+    body: string;
+}
