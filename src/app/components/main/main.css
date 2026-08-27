@@ -50,7 +50,7 @@ img {
 
 .meus-hobbies:hover {
     transition: .4s;
-    transform: rotate(360deg);
+    transform: translateY(-25px);
 }
 
 .cards {
@@ -68,6 +68,14 @@ img {
 
 .texto p {
     margin-bottom: 10px;
+}
+
+.verde {
+    color: green;
+}
+
+.vermelho {
+    color: red;
 }
 
 .hobies {
