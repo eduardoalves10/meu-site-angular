@@ -1,1 +1,25 @@
-<p>usuarios-http-get works!</p>
+<section class="exemplo-get">
+    <h2>Get de Usuários:</h2>
+
+    <div class="botao">
+        <button class="recarregar" (click)="recarregarPostsGet()">Recarregar Posts</button>
+    </div>
+
+    <div class="gets">
+        @if (serviceGlobal.postsDetailsGet.isLoading()) {
+            <p class="mensagem">Carregando...</p>
+        } @else if (serviceGlobal.postsDetailsGet.error()) {
+            <p class="mensagem">Deu erro!</p>
+        } @else if (serviceGlobal.postsDetailsGet.hasValue()) {
+            @for (get of serviceGlobal.postsDetailsGet.value(); track get.id) {
+                <div class="get">
+                    <h3>ID: {{get.id}}</h3>
+                    <p><strong>Nome:</strong> {{get.name}}</p>
+                    <p><strong>Nome de usuário:</strong> {{get.username}}</p>
+                    <p><strong>Email:</strong> {{get.email}}</p>
+                    <p><strong>Telefone:</strong> {{get.phone}}</p>
+                </div>
+            }
+        }
+    </div>
+</section>
