@@ -1,12 +1,13 @@
 import { HttpClient, httpResource } from '@angular/common/http';
 import { inject, Service } from '@angular/core';
 import { InterfaceHttpGet } from './usuarios-http-get/interface-http-get';
+import { InterfaceHttpPost } from './usuarios-http-post/interface-http-post';
 
 @Service()
 export class ServiceGlobal {
 
     // Injeta HttpClient
-    private readonly httpClientGet = inject(HttpClient);
+    private readonly httpClient = inject(HttpClient);
 
     // Passa o link, ou enderço, da API para uma variável 
     private readonly linkApi = 'https://jsonplaceholder.typicode.com/users';
@@ -16,4 +17,9 @@ export class ServiceGlobal {
         () => this.linkApi,
         { defaultValue: [] }
     );
+
+    // Post da API
+    cadastroPostService(postService: InterfaceHttpPost) {
+        return this.httpClient.post(this.linkApi, postService);
+    };
 }

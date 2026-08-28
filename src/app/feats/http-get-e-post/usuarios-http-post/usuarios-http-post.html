@@ -1,1 +1,55 @@
-<p>usuarios-http-post works!</p>
+<section class="exemplo-post">
+    <h2>Post de Usuários:</h2>
+
+    <form (submit)="cadastroPost($event)">
+        <legend>Post</legend>
+
+        <div class="posts">
+            <div class="post">
+                <!-- Nome -->
+                <label for="nome">Nome</label>
+                <input id="nome" type="text" placeholder="Nome" [formField]="postForm.name">
+                @if (postForm.name().touched() && postForm.name().invalid()) {
+                    @for (error of postForm.name().errors(); track error.kind) {
+                        <span class="required">{{error.message}}</span>
+                    }
+                }
+            </div>
+
+            <div class="post">
+                <!-- Nome de usuário -->
+                <label for="nome-usuario">Email</label>
+                <input id="nome-usuario" type="text" placeholder="Nome de Usuário" [formField]="postForm.username">
+                @if (postForm.username().touched() && postForm.username().invalid()) {
+                    @for (error of postForm.username().errors(); track error.kind) {
+                        <span class="required">{{error.message}}</span>
+                    }
+                }
+            </div>
+
+            <div class="post">
+                <!-- Email -->
+                <label for="email">Email</label>
+                <input id="email" type="text" placeholder="Email" [formField]="postForm.email">
+                @if (postForm.email().touched() && postForm.email().invalid()) {
+                    @for (error of postForm.email().errors(); track error.kind) {
+                        <span class="required">{{error.message}}</span>
+                    }
+                }
+            </div>
+
+            <div class="post">
+                <!-- Telefone -->
+                <label for="telefone">Telefone</label>
+                <input id="telefone" type="text" placeholder="Telefone" [formField]="postForm.phone">
+                @if (postForm.phone().touched() && postForm.phone().invalid()) {
+                    @for (error of postForm.phone().errors(); track error.kind) {
+                        <span class="required">{{error.message}}</span>
+                    }
+                }
+            </div>
+        </div>
+
+        <button>Cadastrar Post</button>
+    </form>
+</section>
