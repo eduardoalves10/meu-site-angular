@@ -18,7 +18,7 @@
 
             <div class="post">
                 <!-- Nome de usuário -->
-                <label for="nome-usuario">Email</label>
+                <label for="nome-usuario">Nome de Usuário</label>
                 <input id="nome-usuario" type="text" placeholder="Nome de Usuário" [formField]="postForm.username">
                 @if (postForm.username().touched() && postForm.username().invalid()) {
                     @for (error of postForm.username().errors(); track error.kind) {
@@ -30,7 +30,7 @@
             <div class="post">
                 <!-- Email -->
                 <label for="email">Email</label>
-                <input id="email" type="text" placeholder="Email" [formField]="postForm.email">
+                <input id="email" type="email" placeholder="Email" [formField]="postForm.email">
                 @if (postForm.email().touched() && postForm.email().invalid()) {
                     @for (error of postForm.email().errors(); track error.kind) {
                         <span class="required">{{error.message}}</span>

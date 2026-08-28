@@ -2,6 +2,7 @@ import { HttpClient, httpResource } from '@angular/common/http';
 import { inject, Service } from '@angular/core';
 import { InterfaceHttpGet } from './usuarios-http-get/interface-http-get';
 import { InterfaceHttpPost } from './usuarios-http-post/interface-http-post';
+import { PostRequest } from './usuarios-http-post/post-request';
 
 @Service()
 export class ServiceGlobal {
@@ -20,6 +21,6 @@ export class ServiceGlobal {
 
     // Post da API
     cadastroPostService(postService: InterfaceHttpPost) {
-        return this.httpClient.post(this.linkApi, postService);
+        return this.httpClient.post<PostRequest>(this.linkApi, postService);
     };
 }

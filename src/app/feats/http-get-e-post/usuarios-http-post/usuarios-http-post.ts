@@ -43,8 +43,8 @@ export class UsuariosHttpPost {
     const post = this.postModel();
 
     this.serviceGlobal.cadastroPostService(post).subscribe({
-      next: () => {
-        alert ('Post cadastrado!');
+      next: (response) => {
+        alert ('Post cadastrado com nome:' + response.name);
 
         this.postModel.set({
           name: '',
