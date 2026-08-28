@@ -11,4 +11,8 @@ export class ExemploGet {
 
   protected readonly consumoService = inject(ExemploPostService);
 
+  protected recarregarPosts() {
+    this.consumoService.postsDetails.reload();
+  };
+
 }

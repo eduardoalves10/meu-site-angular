@@ -1,3 +1,25 @@
+.botao {
+    display: flex;
+    justify-content: center;
+}
+
+.recarregar {
+    padding: 16px 32px;
+    background-color: rgba(71, 70, 70, 0.5);
+    border: 0 solid;
+    border-radius: 50px;
+    margin: 10px 0 40px;
+    color: rgb(241, 235, 235);
+    font-family: var(--fonte);
+    font-weight: bold;
+    box-shadow: var(--sombra);
+}
+
+.recarregar:hover {
+    transition: .3s;
+    transform: scale(1.02);
+}
+
 .gets {
     display: flex;
     justify-content: center;

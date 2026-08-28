@@ -1,6 +1,10 @@
 <section class="exemplo-get">
     <h2>Get:</h2>
 
+    <div class="botao">
+        <button class="recarregar" (click)="recarregarPosts()">Recarregar Posts</button>
+    </div>
+
     <div class="gets">
 
         @if (consumoService.postsDetails.isLoading()) {
