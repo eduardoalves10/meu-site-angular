@@ -18,6 +18,7 @@ import { ExemploPut } from './feats/exemplo-put/exemplo-put';
 import { ExemploDelete } from './feats/exemplo-delete/exemplo-delete';
 import { ExemploGet } from './feats/exemplo-get/exemplo-get';
 import { UsuariosHttpGet } from './feats/http-get-e-post/usuarios-http-get/usuarios-http-get';
+import { UsuariosHttpPost } from './feats/http-get-e-post/usuarios-http-post/usuarios-http-post';
 
 export const routes: Routes = [
 
@@ -40,6 +41,7 @@ export const routes: Routes = [
     {path: 'exemplo-delete', component: ExemploDelete},
     {path: 'exemplo-get', component: ExemploGet},
     {path: 'usuarios-http-get', component: UsuariosHttpGet},
+    {path: 'usuarios-http-post', component: UsuariosHttpPost},
     {path: '', redirectTo: 'home', pathMatch: 'full'}
 
 ];
