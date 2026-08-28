@@ -1,7 +1,7 @@
 import { Component, inject, signal } from '@angular/core';
 import { ServiceGlobal } from '../service-global';
 import { InterfaceHttpPost } from './interface-http-post';
-import { form, required, FormField } from '@angular/forms/signals';
+import { form, required, FormField, minLength } from '@angular/forms/signals';
 
 @Component({
   selector: 'app-usuarios-http-post',
@@ -26,15 +26,19 @@ export class UsuariosHttpPost {
 
     // Nome
     required(user.name, { message: 'Nome é obrigatório!' });
+    minLength(user.name, 2, { message: 'Nome deve ter no mínimo 2 caracteres!' });
 
     // Nome de usuário
     required(user.username, { message: 'Nome de Usuário é obrigatório!' });
+    minLength(user.username, 4, { message: 'Nome de Usuário deve ter no mínimo 4 caracteres!' });
 
     // Email
     required(user.email, { message: 'Email é obrigatório!' });
+    minLength(user.email, 10, { message: 'Email deve ter no mínimo 10 caracteres!' });
 
     // Telefone
     required(user.phone, { message: 'Telefone é obrigatório!' });
+    minLength(user.phone, 10, { message: 'Telefone deve ter no mínimo 10 caracteres!' });
   });
 
   protected cadastroPost(event: SubmitEvent) {
@@ -42,9 +46,25 @@ export class UsuariosHttpPost {
 
     const post = this.postModel();
 
+    if (post.name.length < 2) {
+      return;
+    };
+
+    if (post.username.length < 4) {
+      return;
+    };
+
+    if (post.email.length < 10) {
+      return;
+    };
+
+    if (post.phone.length < 10) {
+      return;
+    };
+
     this.serviceGlobal.cadastroPostService(post).subscribe({
       next: (response) => {
-        alert ('Post cadastrado com nome:' + response.name);
+        alert('Novo Post cadastrado o com nome de: ' + response.name);
 
         this.postModel.set({
           name: '',
@@ -57,7 +77,7 @@ export class UsuariosHttpPost {
       },
 
       error: () => {
-        alert ('Algo deu errado!');
+        alert('Algo deu errado!');
       }
     });
 

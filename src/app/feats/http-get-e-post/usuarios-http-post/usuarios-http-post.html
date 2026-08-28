@@ -41,7 +41,7 @@
             <div class="post">
                 <!-- Telefone -->
                 <label for="telefone">Telefone</label>
-                <input id="telefone" type="text" placeholder="Telefone" [formField]="postForm.phone">
+                <input id="telefone" type="tel" placeholder="Telefone" [formField]="postForm.phone">
                 @if (postForm.phone().touched() && postForm.phone().invalid()) {
                     @for (error of postForm.phone().errors(); track error.kind) {
                         <span class="required">{{error.message}}</span>
