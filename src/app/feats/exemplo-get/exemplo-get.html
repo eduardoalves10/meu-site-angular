@@ -4,18 +4,19 @@
     <div class="gets">
 
         @if (consumoService.postsDetails.isLoading()) {
-            <p>Carregando...</p>
-        } @else {
+            <p class="mensagem">Carregando...</p>
+        } @else if (consumoService.postsDetails.error()) {
+            <p class="mensagem">Deu erro!</p>
+        } @else if (consumoService.postsDetails.hasValue()) {
             @for (post of consumoService.postsDetails.value(); track post.id) {
                 <div class="get">
                     <h3>Título: {{post.title}}</h3>
                     <p><strong>Corpo:</strong> {{post.body}}</p>
                     <p><strong>UserID:</strong> {{post.userId}}</p>
-                    <p><strong>ID:</strong> {{post.id}}</p>
+                    <p><strong>ID:</strong><span class="id"> {{post.id}}</span></p>
                 </div>
             }
         }
   
     </div>
-
 </section>
