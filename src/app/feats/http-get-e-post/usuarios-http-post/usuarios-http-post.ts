@@ -34,11 +34,11 @@ export class UsuariosHttpPost {
 
     // Email
     required(user.email, { message: 'Email é obrigatório!' });
-    minLength(user.email, 10, { message: 'Email deve ter no mínimo 10 caracteres!' });
+    minLength(user.email, 6, { message: 'Email deve ter no mínimo 6 caracteres!' });
 
-    // Telefone
-    required(user.phone, { message: 'Telefone é obrigatório!' });
-    minLength(user.phone, 10, { message: 'Telefone deve ter no mínimo 10 caracteres!' });
+    // Telefone/Celular
+    required(user.phone, { message: 'Telefone/Celular é obrigatório!' });
+    minLength(user.phone, 10, { message: 'Telefone/Celular deve ter no mínimo 10 caracteres!' });
   });
 
   protected cadastroPost(event: SubmitEvent) {
@@ -54,7 +54,7 @@ export class UsuariosHttpPost {
       return;
     };
 
-    if (post.email.length < 10) {
+    if (post.email.length < 6) {
       return;
     };
 
