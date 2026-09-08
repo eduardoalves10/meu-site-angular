@@ -1,3 +1,42 @@
+form {
+    display: flex;
+    justify-content: center;
+    margin: 40px 0 30px;
+}
+
+.pesquisar {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+input {
+    padding: 15px;
+    border: 0px solid;
+    box-shadow: var(--sombra);
+    border-radius: 15px;
+    font-family: var(--fonte);
+    font-weight: 300;
+}
+
+input:focus {
+    outline: none;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.pesquisa {
+    padding: 16px 32px;
+    box-shadow: var(--sombra);
+    border-radius: 50px;
+    border: 0px solid;
+    background-color: rgba(180, 38, 38, 0.5);
+    color: rgb(241, 235, 235);
+    font-family: var(--fonte);
+    font-weight: bold;
+    box-shadow: var(--sombra);
+}
+
 .botao {
     display: flex;
     justify-content: center;
@@ -15,7 +54,11 @@
     box-shadow: var(--sombra);
 }
 
-.recarregar:hover {
+button {
+    cursor: pointer;
+}
+
+button:hover {
     transition: .3s;
     transform: scale(1.02);
 }

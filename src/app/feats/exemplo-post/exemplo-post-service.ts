@@ -1,5 +1,5 @@
 import { HttpClient, httpResource } from '@angular/common/http';
-import { inject, Service } from '@angular/core';
+import { inject, Service, signal } from '@angular/core';
 import { InterfacePost } from './interface-post';
 import { InterfacePut } from '../exemplo-put/interface-put';
 import { InterfaceDelete } from '../exemplo-delete/interface-delete';
@@ -31,9 +31,17 @@ export class ExemploPostService {
         return this.httpClient.delete(this.urlApi + '/' + deleteCadastrado.id);
     };
 
+    userId = signal<string>('');
+
     // Get da API
     readonly postsDetails = httpResource<InterfaceGet[]>(
-        () => this.urlApi,
+        () => {
+            const pesquisa = this.userId();
+            return {
+                url: this.urlApi,
+                params: pesquisa ? { userId: pesquisa } : undefined
+            };
+        },
         { defaultValue: [] }
     );
 

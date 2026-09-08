@@ -1,6 +1,13 @@
 <section class="exemplo-get">
     <h2>Get:</h2>
 
+    <form (submit)="filtrarPosts($event)">
+        <div class="pesquisar">
+            <input type="text" [formField]="pesquisaForm">
+            <button class="pesquisa">Filtrar Posts</button>
+        </div> 
+    </form>
+
     <div class="botao">
         <button class="recarregar" (click)="recarregarPosts()">Recarregar Posts</button>
     </div>
