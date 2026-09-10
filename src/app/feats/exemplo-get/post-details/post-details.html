@@ -1,0 +1,17 @@
+<section class="usuario-id">
+    <h2>Id de usuário:</h2>
+
+    <div class="ids">
+         @if (post.isLoading()) {
+            <p>Carregando...</p>
+        } @else if (post.error()) {
+            <p>Deu erro!</p>
+        } @else if (post.hasValue()) {
+            <div class="id">
+                <h3>User Id: {{post.value().userId}}</h3>
+                <p><strong>Title:</strong> {{post.value().title}}</p>
+                <p><strong>Body:</strong> {{post.value().body}}</p>
+            </div>
+        }
+    </div>
+</section>

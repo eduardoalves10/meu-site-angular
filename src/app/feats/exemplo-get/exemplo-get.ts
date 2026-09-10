@@ -1,10 +1,11 @@
 import { Component, inject, signal } from '@angular/core';
 import { ExemploPostService } from '../exemplo-post/exemplo-post-service';
 import { form, FormField } from "@angular/forms/signals";
+import { RouterLink } from "@angular/router";
 
 @Component({
   selector: 'app-exemplo-get',
-  imports: [FormField],
+  imports: [FormField, RouterLink],
   templateUrl: './exemplo-get.html',
   styleUrl: './exemplo-get.css',
 })
